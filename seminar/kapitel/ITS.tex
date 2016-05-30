@@ -146,6 +146,67 @@ angepasst an die individuellen Bedürfnisse eines Lernenden.
 Auf diese Weise sind ITS dazu in der Lage auch komplexere Sachverhalte zu vermitteln.
 
 \section{Struktur}
+Wie jede Software entsprechen auch Intelligente Tutorielle Systeme einer klar definierten Architektur.
+In der Abbildung ist zu sehen, dass ein Intelligentes Tutorielles System aus vier
+Hauptkomponenten besteht, die getrennt voneinander implementiert werden.
+
+\begin{figure}[!ht]
+	\centering
+    \includegraphics[width=0.7\textwidth]{bilder/its_structure.jpg} %70% der Textbreite
+	\caption{Struktur eines Intelligenten Tutoriellen Systems}
+\end{figure}
+
+%% TODO: das Schaubild mit tikz nachstellen wäre schöner.
+%%\begin{figure}
+%%\centering
+%%
+%%	\begin{tikzpicture}[node distance=2.2cm]
+%%
+%%		\tikzstyle{comp1} = [draw, ellipse, rounded corners, minimum height=1cm, minimum width=4cm, fill=gray!50]
+%%		\tikzstyle{comp2} = [draw, rectangle, rounded corners, minimum height=1cm, minimum width=4cm]
+%%		\tikzstyle{comp3} = [draw, ellipse, minimum height=1cm, minimum width=4cm, fill=gray!10, text centered]
+%%
+%%		\tikzstyle{arrow} = [thick,->,>=stealth]
+%%
+%%		%%% NODES %%%
+%%		\node (tutand)     [comp1]                 {Lernender};
+%%		\node (ui)     		 [comp2, below of=tutand, minimum width=10cm]                 {Benutzerschnittstelle};
+%%		\coordinate[below of=ui] (c);
+%%
+%%		\node (tutor)         [comp3, left of=c]      {Tutorenmodell};
+%%		\node (learn)        [comp3, right of=c]     {Lernermodell};
+%%		\node (knowledge)       [comp2, below of=c,minimum width=10cm]     {Wissensmodell};
+%%
+%%		%%% ARROWS %%%
+%%		\draw [arrow] (tutand) -- (ui);
+%%
+%%		\draw [arrow] (ui) -- (tutand);
+%%		\draw [arrow] ([yshift=-0.5cm, xshift=-2.8cm]ui.east) -- (learn);
+%%
+%%		\draw [arrow] (learn) -- (tutor) node [midway, fill=white, text width=3cm] {wahrgenommener Wissensstand,\linebreak Verhaltenssequenzen des Lernenden};
+%%
+%%		\draw [arrow] (tutor) -- (knowledge);
+%%
+%%		\draw [arrow] (knowledge) -- (tutor);
+%%		\draw [arrow] (knowledge) -- (learn);
+%%	\end{tikzpicture}
+%%	\caption{Struktur eines Intelligenten Tutoriellen Systems}
+%%\end{figure}
+
+Die Kanten des Graphen, unter hinzunahme ihrer Beschriftungen, beschreiben die Art der
+Kommunikation zwischen den einzelnen Komponenten.
+Man sieht, dass die einzige Kommunikation zwischen dem Lernenden und dem System über die
+bereitgestellte Benutzerschnittstelle statt findet. Ein beispielhafter Ablauf könnte sein:
+
+Der Schüler löst eine Aufgabe. Über die Benutzerschnittstelle wird dessen Lösung
+an das Lernermodell weitergeleitet. Das Lernermodell erhält gleichermaßen vom Wissensmodell
+die Musterlösung der zu lösenden Aufgabe. An dieser Stelle werden die beiden Lösungsansätze
+verglichen, um mit Hilfe dieses Vergleichs den Wissensstand und die Verhaltensweisen
+des Lernenden abzuleiten. Das Ergebnis dieser Analyse wird dem Tutorenmodell mitgeteilt, welches
+auf Basis der Analyse geeignete pädagogische Lernstrategien für den Lernenden einschlagen kann,
+und ihm entsprechend seiner Bedürfnisse Feedback liefern kann. Dieses wird dem Lernenden
+über die Benutzerschnittstelle kommuniziert. Im weiteren Verlauf der Ausarbeitung
+wird nun genauer auf die einzelnen Komponenten eingegangen.
 
 \subsection{Das Wissensmodell}
 
