@@ -55,7 +55,11 @@ Signifikant für ein Intelligentes Tutorielles System sind hierbei folgende drei
   Die Diagnosefähigkeit ist ein weiterer Kernaspekt eines Intelligenten Tutoriellen Systems.
   Sie beschreibt die Fähigkeit, den aktuellen Wissensstand, sowie weitere Kriterien
   des Lernenden zu analysieren, um so Rückschlüsse über seine themen- und lernspezifische
-  Kompetenz zu bewerten. Ohne diese Fähigkeit wäre ein ITS nicht dazu in der Lage,
+  Kompetenz zu bewerten.
+  Auf diese Art und Weise versucht ein Intelligentes Tutorielles System ein Modell des
+  Lernenden abzuleiten, um darauf basierend eine passende individuelle Lehrstrategie
+  für den Lernenden zu entwickeln.
+  Ohne diese Fähigkeit wäre ein ITS nicht dazu in der Lage,
   seine Inhalte auf eine sinnvolle Art und Weise individuell an einen Lerner anzupassen.
 \end{description}
 
@@ -67,6 +71,14 @@ fortzufahren. So soll gewährleistet werden, dass er Lernende das Lernziel auf e
 für ihn optimalen Weg erreicht.
 
 \section{Unterschiede zu klassischen tutoriellen Systemen}
+Um zu verstehen, wodurch sich Intelligente Tutorielle Systeme von den früheren
+klassischen Tutoriellen Systemen unterscheiden, muss zunächst die Funktionsweise
+von klassischen Tutoriellen Systemen erörtert werden.
+
+Bei klassischen Tutoriellen Systemen handelt es sich ebenfalls um Lernsoftware,
+die einem Lernenden auf (multi)mediale Art und Weise Lehrstoff präsentiert, um ein
+definiertes Lernziel zu erreichen. Es handelt sich hierbei jedoch nicht um reine
+Präsentationssysteme.
 
 \begin{figure}
 	\centering
@@ -89,8 +101,49 @@ für ihn optimalen Weg erreicht.
 		\draw [->] (feedback) -- (end);
 	\end{tikzpicture}
 
-	\caption{Ablaufdiagramm eines klassischen tutoriellen Systems}
+	\caption{Prinzip eines klassischen tutoriellen Systems}
 \end{figure}
+
+In der Abbildung ist erkennbar, dass tutorielle Systeme zusätzlich zur
+reinen Präsentation der Lehrinhalte, zwischendurch einige Fragen an den Lernenden stellen.
+Die Antworten auf diese Fragen, die der Lernüberprüfung dienen, beeinflussen den weiteren
+Verlauf des Lernkurses. Wichtig hierbei ist, dass lediglich der Ablauf des Lernkurses
+beeinflusst wird. So wird ein Lehrinhalt bei unzureichendem Ergebnis in der Leistungsüberprüfung
+solange wiederholt, bis der Lernende dazu in der Lage ist, die Fragestellung korrekt zu beantworten.
+In einem tutoriellen System erhält der Lernende üblicherweise sofort Feedback auf
+seine erbrachte Leistung.
+Bei einer falschen Antwort kann das beispielsweise die Angabe der korrekten Lösung,
+oder ein Hinweis auf den richtigen Lösungsweg sein. Dieses Feedback simuliert
+hierbei die Rolle eines Tutors.
+
+Klassische tutorielle Systeme lassen sich in der Regel dem behavioristischem Lernparadigma
+zuordnen. Die Software repräsentiert eine absolute Lehrautorität, die dem Lernenden
+Wissen präsentiert. Die Bewertung von Antworten beschränkt sich auf falsch oder richtig.
+
+Ein einfaches Beispiel für ein klassisches tutorielles System ist das Lernen für
+die theoretische Fahrschulprüfung mit Hilfe einer Handy-Applikation. Klassisch werden
+hierbei die aus den offiziellen Fragebögen bekannten Fragen repetetiv präsentiert,
+und der Benutzer dazu aufgefordert, eine Antwort auszuwählen.
+
+\begin{figure}
+	\centering
+    \includegraphics[width=0.7\textwidth]{bilder/fahrschule_app.jpg} %70% der Textbreite
+	\caption{Beispielbild der Pocket Fahrschule Handy-Applikation}
+\end{figure}
+
+Tut er dies, wird ihm unmittelbar nach der Eingabe der Antwort vermittelt,
+ob diese richtig oder falsch war.
+Bei komplexeren Fragestellungen wird, je nach Applikation, zusätzlich erläutert warum
+die korrekte Lösung korrekt ist.
+Nach diesem Verfahren wird fortgefahren, bis der Lernende alle vorhandenen Fragen
+korrekt beantwortet hat.
+
+Intelligente Tutorielle Systeme versuchen darüber hinaus die Erkenntnisse neuerer Lernparadigmen,
+wie zum Beispiel dem Kognitivismus zu berücksichtigen.
+Im Gegensatz zu einem klassischen System kann ein ITS individuelle Kritik an einen Lernenden
+formulieren. Der präsentierte Lehrinhalt ist nicht statisch, also in jedem Fall gleich, sondern
+angepasst an die individuellen Bedürfnisse eines Lernenden.
+Auf diese Weise sind ITS dazu in der Lage auch komplexere Sachverhalte zu vermitteln.
 
 \section{Struktur}
 
