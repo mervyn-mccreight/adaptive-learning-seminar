@@ -1,8 +1,96 @@
 \chapter{Intelligente Tutorielle Systeme}
+Intelligente Tutorielle Systeme\footnote{kurz ITS} sind eine um 1973 von Derek. H. Sleeman
+und J.R. Hartley definierte Art von computergesteuerten Lernprogrammen.
+Diese Art von Lernprogrammen waren der erste Ansatz, das in der Lerntheorie
+ergründete Adaptive Lernen im softwaregestützten e-Learning zu etablieren,
+um die Effizienz von Lernsoftware zu verbessern.
+
+Intelligente Tutorielle Systeme erreichen ihre Adaptivität und Flexibilität durch
+eine individuell an den Benutzer angepasste Art von Lernangeboten.
+Das Verhalten während des Lernens, sowie die Leistungen während Lernüberprüfungen,
+oder interaktiven Aufgaben, werden bewertet, um die Präsentation der Lerninhalte zu wählen.
+Das bedeutet, dass ein Intelligentes Tutorielles System zu jeder Zeit versucht zu erkennen,
+wie ausgeprägt das Wissen eines Anwenders in der jeweiligen Thematik ist, um die
+zu vermittelnden Inhalte dementsprechend anzupassen, die dazu führen sollen ein
+definiertes Lernziel zu erreichen.
+So wird ein Anwender, der bisher keine Erfahrungen in einem Thema hat, nicht sofort
+mit komplexen Sachverhalten konfrontiert, sondern langsam in die Thematik eingeführt,
+bis er für die höheren Lernmaterialien bereit ist.
+
 
 \section{Definition}
+\glqq Intelligente tutorielle Systeme (ITS) sind adaptive Mediensysteme, die sich ähnlich
+einem menschlichen Tutor an die kognitiven Prozesse des Lernenden anpassen
+sollen, indem sie die Lernfortschritte und -defizite analysieren und dementsprechend
+das Lernangebot generativ modifizieren sollen.\grqq{} \cite[S. 555]{issing2002information}
+
+Die Intelligenz eines Intelligenten Tutoriellen Systems besteht dementsprechend
+in der Adaption der Lehrinhalte an den Wissensstand des jeweiligen Benutzers.
+Ein ITS versucht, vergleichbar mit einem menschlichen Lehrer, einen flexiblen und adaptiven
+Dialog mit dem Lernenden zu führen, indem es den Unterricht den Merkmalen und Fortschritten
+des Benutzers anpasst.
+
+Signifikant für ein Intelligentes Tutorielles System sind hierbei folgende drei Hauptmerkmale:
+
+\begin{description}
+	\item[Adaptivität]
+  Adaptivität beschreibt die Fähigkeit des Systems, sich selbstständig an den
+  jeweiligen Benutzer anzupassen. Dies geschieht durch die Auswertung von
+  Informationen über zur Verfügung stehenden Lerninhalten, Bewertung des Lernenden, sowie
+  der Anwendung von definierten pädagogischen Strategien.
+  Vergleichbar ist dies mit einer typischen Situation, mit der sich ein
+  menschlicher Lehrer bei der Gestaltung seines Unterrichts konfrontiert sieht.
+  Einem Lehrer ist es nicht möglich, während der Vorbereitung seines Unterrichts
+  zu wissen, welche Strategien er später im Unterricht benötigen wird, um
+  das zu übermittelnde Wissen optimal zu erklären. Er ist dazu gezwungen sich
+  im Laufe des Unterrichts dynamisch an die Situation anzupassen.
+
+	\item[Flexibilität]
+  Die Flexibilität des Systems bezieht sich auf die Fähigkeit, die Darstellung
+  der Lerninhalte zu verändern. Diese Fähigkeit wird durch die getrennte
+  Realisierung der Wissensbasis und der tutoriellen Komponente ermöglicht.
+  Diese beiden Begriffe werden im Laufe dieser Ausarbeitung näher erläutert.
+
+	\item[Diagnosefähigkeit]
+  Die Diagnosefähigkeit ist ein weiterer Kernaspekt eines Intelligenten Tutoriellen Systems.
+  Sie beschreibt die Fähigkeit, den aktuellen Wissensstand, sowie weitere Kriterien
+  des Lernenden zu analysieren, um so Rückschlüsse über seine themen- und lernspezifische
+  Kompetenz zu bewerten. Ohne diese Fähigkeit wäre ein ITS nicht dazu in der Lage,
+  seine Inhalte auf eine sinnvolle Art und Weise individuell an einen Lerner anzupassen.
+\end{description}
+
+Wichtig ist, dass der Lernablauf weiterhin benutzergesteuert ist. Der Benutzer steuert
+selbst, in welcher Geschwindigkeit er seinen Lernprozess gestaltet.
+Das Intelligente Tutorielle System bietet dem Benutzer hierbei jedoch nur zu
+der Bewertung seines Wissensstand passende Lernmaterialen an, um mit dem Lernen
+fortzufahren. So soll gewährleistet werden, dass er Lernende das Lernziel auf einem
+für ihn optimalen Weg erreicht.
 
 \section{Unterschiede zu klassischen tutoriellen Systemen}
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}[
+				part/.style={rectangle, minimum width=4cm, minimum height=2cm, very thick, draw=black, font=\itshape}
+				]
+		\node (start) [part] {Programmstart};
+		\node (presentation) [part, right=of start] {Lehrstoffpräsentation};
+		\node (question) [part, right=of presentation] {Fragestellung};
+    \node (end) [part, below=of start] {Programmende};
+    \node (feedback) [part, below=of presentation, right=of end] {Feedback};
+		\node (analyze) [part, below=of question, right=of feedback] {Analyse der Antwort};
+
+
+		\draw [->] (start) -- (presentation);
+		\draw [->] (presentation) -- (question);
+		\draw [->] (question) -- (analyze);
+		\draw [->] (analyze) -- (feedback);
+		\draw [->] (feedback) -- (presentation);
+		\draw [->] (feedback) -- (end);
+	\end{tikzpicture}
+
+	\caption{Ablaufdiagramm eines klassischen tutoriellen Systems}
+\end{figure}
 
 \section{Struktur}
 
