@@ -209,63 +209,130 @@ und ihm entsprechend seiner Bedürfnisse Feedback liefern kann. Dieses wird dem 
 wird nun genauer auf die einzelnen Komponenten eingegangen.
 
 \subsection{Das Wissensmodell}
-- auch Expertenmodell
-- bildet Wissensbasis des Lernsystems.
-- Ansammlung von Kenntnissen, Erfahrungen, Methoden und Allgemeinwissen.
-- Verkörpert drei verschiedene Wissenskategorien:
--- Deklaratives Wissen (Faktenwissen, "Was-Wissen")
---- "Vokabelwissen" -> Definition von notwendigen Begriffen, etc. (z.B. im
-Kontext Mathe - was ist eine Wurzel, was ist Addieren...)
--- Prozedulares Wissen (praktisches Wissen, "Wie-Wissen")
---- Beinhaltet Regeln, mit deren Hilfe sich Problemstellungen lösen lassen
---- Regelwissen (Schema, nach dem ich vorgehen muss zum Addieren ...)
---- Basis von Prozedularem Wissen ist stets deklaratives Wissen
----- ist also: wie setze ich deklaratives Wissen zusammen, um eine Problemstellung zu lösen.
--- Heuristisches Wissen (Erfahrungswissen)
---- Beinhaltet Erfahrungswerte von Experten, bspw. um Bekannte Fehler zu erkennen und daraufhin
---- bekannte Tipps geben zu können.
---- Handlungsempfehlungen
---- Dient der Unterstützung zur Findung einer richtigen Herangehensweise an ein Problem
+%% - auch Expertenmodell
+%% - bildet Wissensbasis des Lernsystems.
+%% - Ansammlung von Kenntnissen, Erfahrungen, Methoden und Allgemeinwissen.
+%% - Verkörpert drei verschiedene Wissenskategorien:
+Das Wissensmodell wird häufig auch das Expertenmodul genannt. Es repräsentiert den vollständigen
+Wissensstand über die zu lehrende Thematik des Intelligenten Tutoriellen Systems.
+Das Wissensmodell ist zwingend notwendig, damit das System im Lernermodell dazu in der Lage ist,
+den aktuellen Wissensstand des Lerners zu analysieren.
+Es besteht aus einer statischen Ansammlung von Kenntnissen, Erfahrungen, Methoden und Allgemeinwissen.
+Das Wissen wird hierbei in drei unterschiedliche Kategorien eingeteilt:
 
-- Kann auf zwei versch. Arten repräsentiert werden.
--- Black Box Modell
---- Vorgehensweisen vom Programm sind verborgen
---- Nur Ergebnisse von Lösungen sind einsehbar
---- Bildet keine menschliche Intelligenz nach, daher wird Lösungsweg verschleiert.
---- Kann kompliziertere Fragestellungen schneller berechnen, da kein Wert auf Nachvollziehbarkeit gelegt wird.
--- Glass Box Modell
---- Jeder Einzelschritt ist einsehbar.
---- Erhebt Anspruch menschen vergleichbare Methoden zur Problemlösung anzuwenden
---- Vollständiger Lösungsweg ist jederzeit sichtbar, Lernender kann interaktiv Fragen Stellen
---- Modell kann Lernenden zu jeder Zeit Schritt für Schritt helfen.
-- Formell harte Abgrenzung, oft werden die Formen vermischt.
-- Wissen meist in Form von semantischen Netzen modelliert
--- Wie ein Graph/Baum
--- Knoten repräsentieren Wissenseinheiten
--- Kanten repräsentieren Verknüpfungen zwischen Wissen
--- Üblicherweise in einer Hierarchie
---- Wissen von einer Ebene ist Voraussetzung, für verbundenes Wissen in nächster Ebene.
+\begin{description}
+	%% -- Deklaratives Wissen (Faktenwissen, "Was-Wissen")
+	%% --- "Vokabelwissen" -> Definition von notwendigen Begriffen, etc. (z.B. im
+	%% Kontext Mathe - was ist eine Wurzel, was ist Addieren...)
+	\item[Deklaratives Wissen]
+  Das deklarative Wissen repräsentiert \glqq Wissen-Was\grqq{} -Wissen, oder auch Faktenwissen.
+	Es handelt sich hierbei um Sachverhalte, die
+	auswendig gelernt werden können. Beispiele hierfür wären die Anzahl der Wirbel einer menschlichen Wirbelsäule,
+	oder das Faktum, dass \(1+1=2\) ist.
+	Dieses Wissen kann grundsätzlich durch verschiedene Formen repräsentiert werden.
+	So kann es beispielsweise in Textform vermittelt werden, oder durch Schaubilder,
+	die diese Fakten eindeutig erläutern.
+
+	%% -- Prozedulares Wissen (praktisches Wissen, "Wie-Wissen")
+	%% --- Beinhaltet Regeln, mit deren Hilfe sich Problemstellungen lösen lassen
+	%% --- Regelwissen (Schema, nach dem ich vorgehen muss zum Addieren ...)
+	%% --- Basis von Prozedularem Wissen ist stets deklaratives Wissen
+	%% ---- ist also: wie setze ich deklaratives Wissen zusammen, um eine Problemstellung zu lösen.
+	\item[Prozedurales Wissen]
+  Prozedurales Wissen wird auch praktisches Wissen oder \glqq Wissen-Wie\grqq{} -Wissen genannt.
+	Es handelt sich hierbei um Erkenntnisse, auf welche Art und Weise man bekanntes Wissen anwenden kann,
+	um bestimmte Problemstellungen zu lösen.
+	Gemeint sind hiermit bestimmte Zusammensetzung von Regeln, oder auch Schemata, mit Hilfe deren man
+	ein gewünschtes Ergebnis erreicht werden kann.
+	Ein klassisches Beispiel für diese Art von Wissen ist die schriftliche Multiplikation.
+	Man nehme als Beispiel die Lösung der Problemstellung \(15*25=?\).
+	Dieses Problem kann schematisch in kleineren Schritten gelöst werden, und zwar aus der Addition der
+	zwei Teilprodukte \(15*20\) und \(15*5\).
+	Diese herangehensweise ist ein Beispiel für prozedurales Wissen, da es einen Satz von Regeln beschreibt,
+	mit Hilfe deren ich dazu in der Lage bin, schriftlich zu multiplizieren.
+	Wichtig hierbei ist, dass die Basis von prozeduralem Wissen immer deklaratives Wissen ist.
+	Prozedulares Wissen vermittelt stets Regeln, die deklaratives Wissen, möglicherweise verknüpft, verwenden,
+	um komplexe Problemstellungen zu lösen.
+
+	%% -- Heuristisches Wissen (Erfahrungswissen)
+	%% --- Beinhaltet Erfahrungswerte von Experten, bspw. um Bekannte Fehler zu erkennen und daraufhin
+	%% --- bekannte Tipps geben zu können.
+	%% --- Handlungsempfehlungen
+	%% --- Dient der Unterstützung zur Findung einer richtigen Herangehensweise an ein Problem
+	\item[Heuristisches Wissen]
+  Das heuristische Wissen beinhaltete im wesentlichen Erfahrungswerte von Lehrenden.
+	Es wird daher auch häufig Erfahrungswissen genannt.
+	Es handelt sich hierbei um typische Handlungsempfehlungen, die einem Lernenden
+	dabei unterstützen können, die richtige Herangehensweise an eine Problemstellung zu finden.
+	Im wesentlichen sind es Tipps, die sich im Laufe der Zeit in der Regel als hilfreich erwiesen haben.
+\end{description}
+
+%% - Kann auf zwei versch. Arten repräsentiert werden.
+%% -- Black Box Modell
+%% --- Vorgehensweisen vom Programm sind verborgen
+%% --- Nur Ergebnisse von Lösungen sind einsehbar
+%% --- Bildet keine menschliche Intelligenz nach, daher wird Lösungsweg verschleiert.
+%% --- Kann kompliziertere Fragestellungen schneller berechnen, da kein Wert auf Nachvollziehbarkeit gelegt wird.
+%% -- Glass Box Modell
+%% --- Jeder Einzelschritt ist einsehbar.
+%% --- Erhebt Anspruch menschen vergleichbare Methoden zur Problemlösung anzuwenden
+%% --- Vollständiger Lösungsweg ist jederzeit sichtbar, Lernender kann interaktiv Fragen Stellen
+%% --- Modell kann Lernenden zu jeder Zeit Schritt für Schritt helfen.
+%% - Formell harte Abgrenzung, oft werden die Formen vermischt.
+Die Repräsentationsmöglichkeiten des Wissensmodells werden im wesentlichen in zwei verschiedene
+Modelle eingeteilt.
+
+Zum einen gibt es das \glqq Black-Box-Modell\grqq .
+In diesem Modell sind die Vorgehensweisen des Programms, mit deren Hilfe es dazu
+in der Lage ist, eine Problemstellung zu lösen, verborgen. Dem Lernenden sind lediglich
+die Ergebnisse der Lösungen einsehbar. Dieses Modell hat keine Ambitionen, menschliche
+Intelligenz nachzustellen. Der Vorteil hiervon ist die leichtere Umsetzung zur Lösung
+auch komplizierter Sachverhalte, da es nicht notwendig ist, darauf zu achten, dass die
+Lösungswege für einen Menschen nachvollziehbar sind.
+
+Das alternative Modell ist das \glqq Glass-Box-Modell\grqq .
+Dieses Modell erhebt den Anspruch, menschenähnliche Denkweisen zum Lösen von
+Problemstellungen nachzubilden. Auf diese Weise ist es dem Lernenden zu jeder Zeit der
+Problembearbeitung möglich, mit dem System zu interagieren. Das System ist nun in der Lage
+dem Lernenden Schritt für Schritt an die richtige Lösung heranzuführen.
+
+%% - Wissen meist in Form von semantischen Netzen modelliert
+%% -- Wie ein Graph/Baum
+%% -- Knoten repräsentieren Wissenseinheiten
+%% -- Kanten repräsentieren Verknüpfungen zwischen Wissen
+%% -- Üblicherweise in einer Hierarchie
+%% --- Wissen von einer Ebene ist Voraussetzung, für verbundenes Wissen in nächster Ebene.
+Strukturell wird Wissen im Allgemeinen in der Regel in Form von semantischen Netzen modelliert.
+Bei semantischen Netzen handelt es sich um Graphen. Die Knoten des Graphen repräsentieren
+hierbei einzelne atomare Wissenseinheiten. Kanten, mit denen zwei Knoten verbunden werden können,
+zeigen, dass diese beiden Wissenseinheiten miteinander verknüpft sind.
+Eine übliche Form der Verknüpfungsbeziehung ist eine Voraussetzung.
+So kann die Kenntnis einer Wissenseinheit eine Voraussetzung dafür sein,
+dass eine andere Wissenseinheit erst gelernt werden kann.
+
+%% TODO: Hier ein Bsp. für ein semantisches Netz (bsp inhalte: addition, subtraktion, multiplikation, division, potentieren...)
+
 \subsection{Das Lernermodell / Das Tutandenmodell}
-- enthält zu jedem Zeitpunkt aktuell bekannten Wissensstand.
--- aufgeteilt in:
---- Was weiß der Student? (Know that) --> deklaratives Wissen
---- Was kann der Student? (Know how) --> prozedurales Wissen
---- Was hat er bisher gemacht? (Historie)
-- enthält außerdem Informationen darüber, was für ein Lerntyp
-- Lernender wahrscheinlich ist (individuelle Aussage über Lernenden)
--- Wissen durch Monitorung der Historie/Ergebnisse
--- oder durch Fragebögen
-- wird zu jeder Zeit dynamisch neu angepasst, um optimal auf Lernenden zu passen
-- wichtige Komponente: Fehlerkomponente
--- meist als Sammlung in einer Fehlerbibliothek
--- sammelt typische Fehler und Missverständnisse von Lernern
--- hilft dem ITS dem Lernenden schneller entsprechende Tipps zu geben
---- Beispiel: schriftl. Addieren (vergessen vom übertrag)
-- zwei Arten von Lernermodellen
--- Deviation-Modell (Abweichung)
---- TODO: verstehen
--- Overlay-Modell (Untermenge)
---- TODO: verstehen
+%% - enthält zu jedem Zeitpunkt aktuell bekannten Wissensstand.
+%% -- aufgeteilt in:
+%% --- Was weiß der Student? (Know that) --> deklaratives Wissen
+%% --- Was kann der Student? (Know how) --> prozedurales Wissen
+%% --- Was hat er bisher gemacht? (Historie)
+%% - enthält außerdem Informationen darüber, was für ein Lerntyp
+%% - Lernender wahrscheinlich ist (individuelle Aussage über Lernenden)
+%% -- Wissen durch Monitorung der Historie/Ergebnisse
+%% -- oder durch Fragebögen
+%% - wird zu jeder Zeit dynamisch neu angepasst, um optimal auf Lernenden zu passen
+%% - wichtige Komponente: Fehlerkomponente
+%% -- meist als Sammlung in einer Fehlerbibliothek
+%% -- sammelt typische Fehler und Missverständnisse von Lernern
+%% -- hilft dem ITS dem Lernenden schneller entsprechende Tipps zu geben
+%% --- Beispiel: schriftl. Addieren (vergessen vom übertrag)
+%% - zwei Arten von Lernermodellen
+%% -- Deviation-Modell (Abweichung)
+%% --- TODO: verstehen
+%% -- Overlay-Modell (Untermenge)
+%% --- TODO: verstehen
 
 \subsection{Das Tutorenmodell / Die Didaktikkomponente}
 
