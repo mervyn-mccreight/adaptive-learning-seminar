@@ -323,29 +323,83 @@ dass eine andere Wissenseinheit erst gelernt werden kann.
 %% -- Wissen durch Monitorung der Historie/Ergebnisse
 %% -- oder durch Fragebögen
 %% - wird zu jeder Zeit dynamisch neu angepasst, um optimal auf Lernenden zu passen
-%% - wichtige Komponente: Fehlerkomponente
-%% -- meist als Sammlung in einer Fehlerbibliothek
+%% - typisches Lernerwissensmodell ist das Overlay-Modell.
+%% -- Overlay-Modell (Untermenge)
+%% --- Vergleicht jedes Wissenselement des Lernthemas mit Wissensstand des Lerners.
+%% --- Wissen des Lernenden ist Teilmenge von Systemwissen.
+%% --- Streng genommen wird notiert, ob Lernender Wissenselement beherrscht oder nicht
+%% --- in der Praxis zu streng, es wird bewertet "wie gut" der Lernende etwas kann.
+%% --- Fehler werden als unvollständiges Wissen betrachtet
+%% - Overlay Modell nur in der Lage zu sagen DASS Lernender Wissen nicht hat.
+%% - Vorhandenes, aber falsches Wissen ist nicht abbildbar.
+%% - kann auch sein, dass Wissen korrekt vorhanden ist, aber falsch eingesetzt wird.
+%% - daher zusätzlich zum Overlay-Modell Fehlerbibliothek.
 %% -- sammelt typische Fehler und Missverständnisse von Lernern
 %% -- hilft dem ITS dem Lernenden schneller entsprechende Tipps zu geben
 %% --- Beispiel: schriftl. Addieren (vergessen vom übertrag)
-%% - zwei Arten von Lernermodellen
-%% -- Deviation-Modell (Abweichung)
-%% --- TODO: verstehen
-%% -- Overlay-Modell (Untermenge)
-%% --- TODO: verstehen
+%% -- ist häufig sehr groß und unterschiedlich
+%% -- ist unmöglich, alle Fehler vorherzusagen.
 
 \subsection{Das Tutorenmodell / Die Didaktikkomponente}
+%% - simuliert das Verhalten eines Lehrers
+%% - entscheidet, wann welche Lehrinhalte wie dargestellt werden sollen
+%% - gestaltet den Unterricht
+%% - wählt das aktuelle Lehrziel
+%% - anforderungen an das modul:
+%% -- angemessene aufbereitung der lehrinhalte
+%% -- angemessene auswahl der lehrstrategie
+%% -- steuerung des lehrtempos (kleinschrittiger oder gröber)
+%% -- rückmeldungen motivierend gestalten (fachlich korrekt, aber positiv)
+%% - trifft entscheidungen anhand des aktuellen lernstandes (zusammenspiel tutoren und tutanden modell)
+%% - entscheidet auf basis der analyse, ob hilfe geleistet werden soll,
+%% - eine neue aufgabe gestellt werden soll,
+%% - wählt auch die art der lehrmethode (herleitung der lösung durch dialog, angabe einer richtigen lösung, ...)
+%% - adaption wird hier entschieden.
+%% - wissensstandanalyse des lernenden abhängig von wissensart
+%% -- deklaratives wissen ist entweder richtig oder falsch, korrektur durch angabe
+%% -- prozedurales wissen schwieriger zu analysieren
+%% --- handelt sich um die anwendung von regeln
+%% --- methode: model-tracing
+%% --- nachvollziehung des problemlöseverhalten des lernenden
+%% --- prozedurales wissen (regeln) sind bekannt
+%% --- problem nun schritt für schritt durch anwendung der regeln lösen
+%% --- schauen, wo problemlösungsschritte des schülers einen möglichen lösungsweg verlassen
+%% -- problem hierbei: es ist unmöglich zu wissen, ob der lernende nur rät oder nicht.
+
 
 \subsection{Die Benutzerschnittstelle}
-
+%% - ist die kommunikationsschnittstelle mit dem benutzer
+%% - auf ihr wird dem lernenden wissen repräsentiert
+%% - lernender kommuniziert über sie mit dem system
+%% - anforderungen an die benutzerschnittstelle:
+%% -- leicht anwendbar/erlernbar
+%% -- robust
+%% - mögliche arten: kommandozeile, menüs, jede art von grapischer oberfläche.
 \section{Formen der Modifikation zur Adaption}
-
+%% - je nach art von lernsystem (menü? dialog mit aufgaben?) verschiedene methoden
+%% - methoden sind unabhängig voneinander und können kombiniert werden
+%% - mehr methoden als hier präsentiert, da möglichkeit der adaption sehr vielfältig
+%% - dienen nur als beispiele
 \subsection{Sequenzierung}
-
-\subsection{Analyse von Ergebnissen}
+%% - reihenfolge von aufgabenstellungen bestimmen
+%% - machbar, wenn benutzer selbst nicht navigiert, sondern lernsystem entscheidet
+%% - adaptiv nun daher, da lehrplan nicht fest, sondern dynamisch, je nach wissensbewertung
 
 \subsection{Unterstützung beim Lösen von Problemen}
+%% - abweichend vom eig. lehrplan, einschübe von zusatzinformationen
+%% - in form von vorgegebenem wissen
+%% - auch in form von zusätzlichen zwischengeschobenen aufgaben
+%% - um wissen selbst herzuleiten
 
 \subsection{Adaptive Präsentation}
+% - änderung der präsentationsart von lehrinhalten
+% - zusätzlicher text (z.b. erklärungen)
+% - unterschiedliche präsentationsformen (text/bild/video)
+% - präsentationsreihenfolge von lehrinhalten für eine wissenseinheit
 
 \subsection{Adaptive Navigation}
+% - veränderung der navigation
+% - verstecken von navigationsinhalten basierend auf wissensbewertung
+% - hervorhebung von vorgeschlagenen nächsten inhalten
+% - alternativ auch hier, sortierung nach bewerteter eignung
+% - direkte steuerung der navigation
