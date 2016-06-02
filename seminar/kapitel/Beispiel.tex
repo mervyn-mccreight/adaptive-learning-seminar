@@ -1,5 +1,6 @@
-\chapter{Der LISP Tutor}
+\chapter{Der LISP-Tutor GREATERP}
 
+\section{Hintergrund}
 %% -- einleitung
 %% - wurde an der Carnegie-Mellon-University entwickelt
 %% - 1985 entwickelt
@@ -15,6 +16,38 @@
 %% -- stellt daraufhin eine neue aufgabe
 %% -- oder gibt hilfestellung
 %% -- und so weiter
+
+Ein Beispiel für ein Intelligentes Tutorielles System ist der LISP-Tutor GREATERP\footnote{Goal-Restricted Environment for Tutoring and Educational Research on Programming}.
+Dieses Lehrsystem wurde in den 80er Jahren an der Carnegie-Mellon-Universität entwickelt.
+Ziel des Lernsystem ist es, einem Lernenden die Prinzipien von LISP zu lehren. Dabei soll das
+Gefühl eines auf den Lernenden zugeschnittenen Einzelunterrichts entstehen.
+
+Das Programm verfügt über eine sehr einfach gehaltene Benutzerschnittstelle.
+Die einzige Kommunikationsform zwischen Tutor und Schüler ist Text.
+Das Programm präsentiert seine Informationen und Aufgabenstellungen in reiner Textform,
+während der Schüler in einem dafür vorgesehenen Editorfeld darauf antworten kann.
+Kommt der Schüler an einer Stelle des Programms nicht weiter, hat über das Textfeld auch die Möglichkeit
+nach einer genaueren Erklärung zu verlangen.
+Da das Lernprogramm vergleichsweise sehr natürlich sprachlich kommuniziert, entsteht der
+Eindruck eines echten Dialogs.
+
+Der Ablauf entspricht hierbei dem typischen Ablauf eines ITS.
+Das System stellt dem Schüler eine Aufgabe. Der Schüler gibt eine Lösung ab, oder fragt nach genauerer Erklärung.
+Die abgegebene Lösung wird von dem System analysiert, sodass sich im Lernermodul ein Modell aktuellen Wissenstands des Schülers bildet.
+Das System bewertet im Zusammenspiel des Wissensmodells und des Lernermodells die Lösung und den aktuellen Wissensstand.
+Auf Basis dieser Analyse entscheidet das Tutorenmodell, welche Art von Aufgabenstellung sich für den Schüler in der Folge am Besten eignet.
+Feedback wird sofort gegeben.
+
+\section{Der Beispieldialog - Das Lösen der Fakultät-Aufgabe}
+Um die Arbeitsweise des intelligenten LISP-Tutors näher zu erläutern,
+wird im Folgenden ein Beispieldialog präsentiert. Dieser ist an der
+Carnegie-Mellon-Universität mit Hilfe eines Studenten und dem Lernsystem entstanden.
+Die Präsentation der Ausgabe entspricht nicht dem originalen Design des Programms,
+sondern aus Gründen der Übersicht tatsächlich als eine Art Dialog dargestellt.
+Des weiteren wird der Dialog in verkürzter Form präsentiert, um die wichtigen Aspekte
+herauszuarbeiten.
+\newpage
+
 %%
 %% - nun am beispiel durchgehen (komplettes listing 2 schritt für schritt illustrieren):
 %% --- abschnitt 1: dialog zwischen student und maschine, um funktion fact zu schreiben (listing 2)
@@ -24,6 +57,43 @@
 %% --- man sieht, natürlich sprachliche antwort vom programm
 %% --- analyse von eingegebenem code, annahme was er bewirken soll
 %% --- vorschlag: funktion statt equal zero --> ergebnis von heuristischem wissen.
+
+\begin{figure}[!ht]
+\begin{lstlisting}
+  TUTOR:
+  Define the function fact. It takes a number argument n, and computes the
+  factorial of n, which is the result of multiplying n*(n-1)*(n-2) ... * 1.
+  By definition, 0! is 1.
+
+  USER-INPUT:
+  (defun fact(n)
+    (cond ((equal) < ACTION >)
+    <RECURSIVECASE>
+  ))
+
+  TUTOR:
+  I assume that you are trying to test if the number argument is equal to
+  the number zero. There is a special function for testing equivalence to zero.
+  Try to use that function instead of equal.
+
+  What code can you write to test if the condition for terminating case is true?
+  Try writing a predicate!
+\end{lstlisting}
+\caption{Beispieldialog LISP-Tutor Teil 1}
+\end{figure}
+
+Anhand des ersten Teils fällt sofort auf, dass das Lernsystem in Schriftform, aber
+auf natürlich sprachliche Art und Weise mit dem Lernenden kommuniziert.
+Im zweiten Schritt, nach der Eingabe des ersten Lösungsansatzes, ist zu sehen,
+dass das Lernsystem dazu in der Lage ist, den eingegebenen Lösungstext zu verstehen.
+Die Lösung wird nicht bloß mit einer Musterlösung verglichen und als falsch tituliert.
+Stattdessen erkennt das Programm die Intention und liefert Ansätze zur Verbesserung.
+Dies ist ein gutes Beispiel zur Verdeutlichung der Funktionsweise des heuristischen Wissens
+im Wissensmodell. Der Fehler, für den Vergleich mit der Zahl null, die Funktion
+equal statt zerop zu verwenden, ist ein häufig vorkommender Fehler. Dieser wurde mit Hilfe
+des heuristischen Wissens erkannt und durch das Tutorensystem mit einem entsprechenden Tipp
+kommentiert.
+
 %%
 %% --- listing abschnitt 3
 %% -- hier sieht man auch ein beispiel, wo der benutzer eine auswahl hat
@@ -36,5 +106,42 @@
 %% -- wieder aufgenommen wird.
 %% ---> entscheidung des tutorenmodells auf basis der analyse im lernermodell
 %% -- siehe folgedialoge mit theor. fragen zu rekursion.
-%%
+
+\begin{figure}[!ht]
+\begin{lstlisting}
+  TUTOR:
+  Is the value of fact in the recursive cases calculated by:
+  PRESS:      IF YOU WANT TO:
+  1           Calling fact recursively with n.
+  2           Multiplying n by fact of n minus 1.
+  3           Getting 1 2 ... n and then multiplying the results.
+  4           Have the tutor choose.
+
+  USER-INPUT:
+  3
+
+  TUTOR:
+  That is a reasonable way to think of doing factorials, but it is not a plan for a recursive function.
+  Since you seem to be having trouble with the recursive cases, let us work through some examples and
+  figure out the conditions and actions for each of these cases.
+  (...)
+\end{lstlisting}
+\caption{Beispieldialog LISP-Tutor Teil 2}
+\end{figure}
+
+Hier sieht man ein Beispiel einer theoretischen Frage, die nicht direkt mit Code beantwortet wird.
+In diesen Auswahlen gibt es optimale und nicht-optimale Lösungen.
+Diese Frage wird dem Lernenden gestellt, da er in den vorangegangenen Lösungsschritten
+bereits Hilfestellungen in Anspruch nehmen musste. Im Lernermodell wird er daher bisher als nicht
+fortgeschrittener Benutzer bewertet. Da es sich im Kern um eine Aufgabe zum Thema Rekursion handelt,
+wird über die theoretische Zwischenfrage geprüft, ob der Lernende sich bereits mit dem Thema auskennt.
+Da die Frage in diesem Beispiel falsch beantwortet wird, werden nun erst die allgemeinen Verständnislücken
+zum Thema Rekursion geschlossen, bevor mit der eigentlichen Übungsaufgabe fortgefahren wird.
+Hätte der Lernende die Frage richtig beantwortet, wäre der Kurs an dieser Stelle direkt
+mit der Weiterführung der Programmierung fortgefahren. Auch hier zeigt sich wieder das Zusammenspiel des Lerner- und des Tutorenmodells.
+
+
+
+
+
 %% -- und so weiter .. bisschen fleißaufgabe hier
