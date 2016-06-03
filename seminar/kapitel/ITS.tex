@@ -318,11 +318,23 @@ dass eine andere Wissenseinheit erst gelernt werden kann.
 %% --- Was weiß der Student? (Know that) --> deklaratives Wissen
 %% --- Was kann der Student? (Know how) --> prozedurales Wissen
 %% --- Was hat er bisher gemacht? (Historie)
+Das Lernermodell stellt zu jedem Zeitpunkt den aktuell bekannten Wissensstand des Lernenden dar.
+Jede Aktion des Lerners führt zu einer neuen Bewertung seines Wissens. Das Lernermodell ist daher stark dynamisch.
+Das ist notwendig damit das Intelligente Tutorielle System zu jeder Zeit dazu in der Lage ist, sich voraussichtlich optimal
+auf den Lernenden einzustellen.
+Passens zum Wissensmodell ist auch das Wissen des Lerners im Lernermodell in zwei Kategorien aufgeteilt.
+Es handelt sich hierbei um deklaratives und prozedurales Wissen. Bei beidem handelt es sich um Wissen, dass
+in der Form auch im Wissensmodell bekannt ist.
+
 %% - enthält außerdem Informationen darüber, was für ein Lerntyp
 %% - Lernender wahrscheinlich ist (individuelle Aussage über Lernenden)
 %% -- Wissen durch Monitorung der Historie/Ergebnisse
 %% -- oder durch Fragebögen
-%% - wird zu jeder Zeit dynamisch neu angepasst, um optimal auf Lernenden zu passen
+Zusätzlich zum reinen Wissen enthält das Lernermodell auch eine
+Historie aller Aktionen, die der Lerner vorgenommen hat. Über die Historie lassen sich Voraussagen über Vorlieben, Stärken
+und Schwächen des Lernenden treffen. Dies ist notwendig, um den Lernenden einem Lernstereotypen zuzuordnen.
+Solches Wissen lässt sich ebenfalls über eine zusätzliche Befragung des Lerners aneignen.
+
 %% - typisches Lernerwissensmodell ist das Overlay-Modell.
 %% -- Overlay-Modell (Untermenge)
 %% --- Vergleicht jedes Wissenselement des Lernthemas mit Wissensstand des Lerners.
@@ -330,15 +342,37 @@ dass eine andere Wissenseinheit erst gelernt werden kann.
 %% --- Streng genommen wird notiert, ob Lernender Wissenselement beherrscht oder nicht
 %% --- in der Praxis zu streng, es wird bewertet "wie gut" der Lernende etwas kann.
 %% --- Fehler werden als unvollständiges Wissen betrachtet
+Eine typische Form ein Lernermodell darzustellen ist das Overlay-Modell.
+Bei dem Overlay-Modell wird das Wissen des Lernenden stets als Teilmenge des Systemwissens betrachtet.
+Jedes bekannte Wissenselement der Lerndomäne wird mit dem aktuellen Wissensstand des Lerners verglichen.
+Streng genommen wird hierbei lediglich notiert, ob der Lernende dieses Wissenselement optimal beherrscht, oder gar nicht.
+Diese strenge Trennung ist in der Praxis jedoch zu stark, weswegen typischerweise eine Bewertung jeder Wissenseinheit vorgenommen wird.
+So wird bewertet, zu welchem Grad der Lernende das entsprechende Wissensteil beherrscht.
+Im Overlay-Modell werden Fehler stets als unvollständiges Wissen betrachtet.
+
 %% - Overlay Modell nur in der Lage zu sagen DASS Lernender Wissen nicht hat.
 %% - Vorhandenes, aber falsches Wissen ist nicht abbildbar.
 %% - kann auch sein, dass Wissen korrekt vorhanden ist, aber falsch eingesetzt wird.
 %% - daher zusätzlich zum Overlay-Modell Fehlerbibliothek.
+Diese Art von Lernerwissensmodell ist in reiner Form lediglich dazu in der Lage, zu erkennen,
+dass ein Lernender bestimmtes Wissen nicht besitzt.
+Bereits vorhandenes, aber eventuell leicht verfälschtes Wissen ist auf diese Art und Weise nicht abbildbar.
+Denkbar ist auch, dass der Lernende bestimmtes Wissen bereits besitzt, es jedoch lediglich falsch anwendet.
+Um diese Defizite auszugleichen, erweitert man das Overlay-Modell häufig noch um eine Fehlerbibliothek.
+
 %% -- sammelt typische Fehler und Missverständnisse von Lernern
 %% -- hilft dem ITS dem Lernenden schneller entsprechende Tipps zu geben
 %% --- Beispiel: schriftl. Addieren (vergessen vom übertrag)
 %% -- ist häufig sehr groß und unterschiedlich
 %% -- ist unmöglich, alle Fehler vorherzusagen.
+Eine Fehlerbibliothek besteht aus typischen Fehlern und Missverständnissen von Lernen.
+Mit Hilfe der Fehlerbibliothek ist es dem Tutorenmodell später möglich, eine bestimmte Art von
+Fehlern zu erkennen, und durch entsprechende Hinweise zu korrigieren.
+Ein Beispiel hierfür wäre ein vergessener Übertrag beim schriftlichen Addieren.
+Es handelt sich um einen typischen Fehler, der jedoch nicht bedeutet, dass der Lernende nicht dazu in der Lage ist
+zu addieren. Er vergisst lediglich einen Schritt.
+Eine Fehlerbibliothek ist häufig sehr groß. Es ist auch unmöglich zum Zeitpunkt des Anlegens der Fehlerbibliothek
+alle möglichen Fehler zu berücksichtigen oder vorherzusagen. Daher ist eine Fehlerbibliothek stets unvollständig.
 
 \subsection{Das Tutorenmodell / Die Didaktikkomponente}
 %% - simuliert das Verhalten eines Lehrers
