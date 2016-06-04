@@ -379,16 +379,46 @@ alle möglichen Fehler zu berücksichtigen oder vorherzusagen. Daher ist eine Fe
 %% - entscheidet, wann welche Lehrinhalte wie dargestellt werden sollen
 %% - gestaltet den Unterricht
 %% - wählt das aktuelle Lehrziel
+Das Tutorenmodell, auch Lehrermodell oder Didaktikkomponente genannt, simuliert das Verhalten eines Lehrers.
+Es erhält vom Lernermodell den aktuellen Wissensstand über den Lernenden. Mit Hilfe dieser Informationen
+werden in dieser Komponente Entscheidungen über das weitere Lehrverfahren getroffen.
+So entscheidet das Tutorenmodell zum Beispiel, wann und auf welche Art und Weise welche Lehrinhalte
+dargestellt werden sollen. Auch andere unterrichtsgestaltende Maßnahmen werden hier entschieden.
+An das Tutorenmodell werden folgende Anforderungen gestellt:
 %% - anforderungen an das modul:
 %% -- angemessene aufbereitung der lehrinhalte
 %% -- angemessene auswahl der lehrstrategie
 %% -- steuerung des lehrtempos (kleinschrittiger oder gröber)
 %% -- rückmeldungen motivierend gestalten (fachlich korrekt, aber positiv)
+\begin{description}
+	\item[Angemessene Aufbereitung der Lehrinhalte]
+  Das Tutorenmodell muss dazu in der Lage sein die Lehrinhalte
+	auf den Lerner spezialisiert zu adaptieren.
+
+	\item[Angemessene Auswahl der Lehrstrategie]
+  Die Didaktikkomponente muss dazu in der Lage sein für jeden Lernenden die passende Lehrstrategie zu wählen.
+
+	\item[Steuerung des Lehrtempos]
+  Das Lerntempo, mit dem verschiedene Lehrinhalte präsentiert werden, muss auf den Lernstil des Lerners zugeschnitten sein.
+	Dies bezieht sich im Wesentlichen auf die Einteilung in größere und kleinere Lernschritte.
+
+	\item[Wahl des aktuellen Lehrziels]
+	Das Tutorenmodell muss zu jeder Zeit dazu in der Lage sein das für den Lernenden optimale jeweils nächste Lehrziel zu wählen.
+\end{description}
+
 %% - trifft entscheidungen anhand des aktuellen lernstandes (zusammenspiel tutoren und tutanden modell)
 %% - entscheidet auf basis der analyse, ob hilfe geleistet werden soll,
 %% - eine neue aufgabe gestellt werden soll,
 %% - wählt auch die art der lehrmethode (herleitung der lösung durch dialog, angabe einer richtigen lösung, ...)
 %% - adaption wird hier entschieden.
+Um diese Anforderungen zu erfüllen, muss das Tutorenmodell mit dem Lernermodell zusammenarbeiten.
+Das Tutorenmodell trifft seine Entscheidungen auf Basis des aktuellen Wissensstands des Lernenden.
+Dieser Wissensstand erhält das Tutorenmodell über das Lernermodell.
+Basierend auf dem aktuellen Wissen, und durch die Analyse der bisher durchgeführten Aktionen über die Historie,
+ist das Tutorenmodell dazu in der Lage, auszuwählen, welcher Lehrinhalt optimalerweise auf welche Art und Weise präsentiert werden soll.
+Das bedeutet, dass die Adaption des Systems innerhalb dieser Komponente entschieden wird.
+Das Tutorenmodell bestimmt sowohl den Lehrplan, als auch die Lernmethodik.
+
 %% - wissensstandanalyse des lernenden abhängig von wissensart
 %% -- deklaratives wissen ist entweder richtig oder falsch, korrektur durch angabe
 %% -- prozedurales wissen schwieriger zu analysieren
@@ -399,7 +429,21 @@ alle möglichen Fehler zu berücksichtigen oder vorherzusagen. Daher ist eine Fe
 %% --- problem nun schritt für schritt durch anwendung der regeln lösen
 %% --- schauen, wo problemlösungsschritte des schülers einen möglichen lösungsweg verlassen
 %% -- problem hierbei: es ist unmöglich zu wissen, ob der lernende nur rät oder nicht.
+Wie der Wissensstand des Lernenden an dieser Stelle analysiert wird, ist abhängig von der Art des Wissens.
+Wird deklaratives Wissen bewertet, kann lediglich unterschieden werden, ob dieses richtig oder falsch angegeben wurde.
+Eine Korrektur dieses Wissens geschieht üblicherweise durch eine erneute Präsentation des korrekten Wissens.
+Prozedurales Wissen ist schwieriger zu analysieren. Hierfür muss entschieden werden, ob Regeln korrekt und/oder in einer zielführenden
+Art und Weise angewendet wurden. Dabei führen oftmals mehrere verschiedene Lösungswege zu der selben korrekten Lösung.
+Eine Methode, zu bewerten ob dieses Wissen korrekt angewandt wurde, ist das Model-Tracing.
 
+Das Model-Tracing Verfahren versucht das Problemlösungsverhalten eines Lernenden nachzuvollziehen.
+Das korrekte prozedurale Wissen ist an dieser Stelle über das Wissensmodell bekannt.
+Nun wird versucht, Schritt für Schritt zu versuchen mit Hilfe der bekannten und korrekten Regeln, den Lösungsweg des Lernenden nachzuvollziehen.
+Hierfür wird Schritt für Schritt ein Lösungswegbaum mit zielführenden Lösungswegen aufgebaut.
+Verlässt der Schüler mit einem seiner Zwischenschritte diesen Baum, ist davon auszugehen, dass der Lernende
+an dieser Stelle eine falsche Entscheidung getroffen hat. Nun kann das System den Lernenden darauf hinweisen.
+Problematisch ist hierbei, dass es für das System nicht möglich ist zu wissen, ob der Lernende seine Schritte
+bewusst, oder durch raten angewendet hat. Daher kann es auch zu Fehleinschätzungen seines Wissenstandes kommen.
 
 \subsection{Die Benutzerschnittstelle}
 %% - ist die kommunikationsschnittstelle mit dem benutzer
