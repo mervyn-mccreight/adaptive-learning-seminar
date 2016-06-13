@@ -80,7 +80,7 @@ die einem Lernenden auf (multi)mediale Art und Weise Lehrstoff präsentiert, um 
 definiertes Lernziel zu erreichen. Es handelt sich hierbei jedoch nicht um reine
 Präsentationssysteme.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 	\centering
 	\begin{tikzpicture}[
 				part/.style={rectangle, minimum width=4cm, minimum height=2cm, very thick, draw=black, font=\itshape}
@@ -125,7 +125,7 @@ die theoretische Fahrschulprüfung mit Hilfe einer Handy-Applikation. Klassisch 
 hierbei die aus den offiziellen Fragebögen bekannten Fragen repetetiv präsentiert,
 und der Benutzer dazu aufgefordert, eine Antwort auszuwählen.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 	\centering
     \includegraphics[width=0.7\textwidth]{bilder/fahrschule_app.jpg} %70% der Textbreite
 	\caption{Beispielbild der Pocket Fahrschule Handy-Applikation}
@@ -143,7 +143,7 @@ wie zum Beispiel dem Kognitivismus zu berücksichtigen.
 Im Gegensatz zu einem klassischen System kann ein ITS individuelle Kritik an einen Lernenden
 formulieren.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 	\centering
 
 	\begin{tikzpicture}[->,>=stealth', node distance=2cm,
@@ -202,7 +202,7 @@ Wie jede Software entsprechen auch Intelligente Tutorielle Systeme einer klar de
 In der Abbildung ist zu sehen, dass ein Intelligentes Tutorielles System aus vier
 Hauptkomponenten besteht, die getrennt voneinander implementiert werden.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 	\centering
     \includegraphics[width=0.7\textwidth]{bilder/its_structure.jpg} %70% der Textbreite
 	\caption{Struktur eines Intelligenten Tutoriellen Systems}
@@ -372,17 +372,28 @@ Eine mögliche Form einer Relation, die auch häufig in semantischen Netzen für
 ist eine Voraussetzung. Solch eine Relation würde ausdrücken, dass eine Wissenseinheit zwingend notwendig ist,
 um eine andere Wissenseinheit zu verstehen. In diesem Fall würde es sich bei dem semantischen Netz um einen gerichteten Graphen handeln.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
 	\centering
 
-	\begin{tikzpicture}[->,>=stealth', node distance=2cm,
+	\begin{tikzpicture}[->,>=stealth', node distance=2cm and 2cm,
                     semithick]
 			\tikzstyle{comp2} = [fill=yellow, draw, rectangle, rounded corners, minimum height=0.8cm]
 
-			\node[comp2]	(A)                    	{TODO};
-			\node[comp2]  (B) [below of=A] 				{Bsp. für semantisches Netz};
+			\node[comp2]	(A)                    	{Addition};
+			\node[comp2]  (B) [right=of A] 				{Subtraktion};
+			\node[comp2]  (C) [above=of A] 				{schriftl. Addition};
+			\node[comp2]  (D) [above of=B, right=of C] 	{schriftl. Subtraktion};
+			\node[comp2]  (E) [above of=A, left=of C] 	{Multiplikation};
+			\node[comp2]  (F) [above of=C] 	{Division};
+			\node[comp2]  (G) [above of=E] 	{schriftl. Multiplikation};
 
 			\path (A) edge              (B)
+						(A) edge              (C)
+						(A) edge              (E)
+						(B) edge              (D)
+						(C) edge              (D)
+						(E) edge              (G)
+						(E) edge              (F)
 			;
 			\end{tikzpicture}
 	\caption{Theoretisches Beispiel für ein semantisches Netzwerk mit Abhhängigkeitsrelationen}
