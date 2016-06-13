@@ -270,6 +270,8 @@ Wissensstand über die zu lehrende Thematik des Intelligenten Tutoriellen System
 Das Wissensmodell ist zwingend notwendig, damit das System im Lernermodell dazu in der Lage ist,
 den aktuellen Wissensstand des Lerners zu analysieren.
 Es besteht aus einer statischen Ansammlung von Kenntnissen, Erfahrungen, Methoden und Allgemeinwissen.
+
+\subsubsection{Wissenskategorien}
 Das Wissen wird hierbei in drei unterschiedliche Kategorien eingeteilt:
 
 \begin{description}
@@ -331,6 +333,7 @@ Das Wissen wird hierbei in drei unterschiedliche Kategorien eingeteilt:
 %% --- Vollständiger Lösungsweg ist jederzeit sichtbar, Lernender kann interaktiv Fragen Stellen
 %% --- Modell kann Lernenden zu jeder Zeit Schritt für Schritt helfen.
 %% - Formell harte Abgrenzung, oft werden die Formen vermischt.
+\subsubsection{Repräsentationsmöglichkeiten}
 Die Repräsentationsmöglichkeiten des Wissensmodells werden im wesentlichen in zwei verschiedene
 Modelle eingeteilt.
 
@@ -348,21 +351,48 @@ Problemstellungen nachzubilden. Auf diese Weise ist es dem Lernenden zu jeder Ze
 Problembearbeitung möglich, mit dem System zu interagieren. Das System ist nun in der Lage
 dem Lernenden Schritt für Schritt an die richtige Lösung heranzuführen.
 
+
 %% - Wissen meist in Form von semantischen Netzen modelliert
 %% -- Wie ein Graph/Baum
 %% -- Knoten repräsentieren Wissenseinheiten
 %% -- Kanten repräsentieren Verknüpfungen zwischen Wissen
 %% -- Üblicherweise in einer Hierarchie
 %% --- Wissen von einer Ebene ist Voraussetzung, für verbundenes Wissen in nächster Ebene.
+\subsubsection{Das semantische Netz}
 Strukturell wird Wissen im Allgemeinen in der Regel in Form von semantischen Netzen modelliert.
-Bei semantischen Netzen handelt es sich um Graphen. Die Knoten des Graphen repräsentieren
-hierbei einzelne atomare Wissenseinheiten. Kanten, mit denen zwei Knoten verbunden werden können,
-zeigen, dass diese beiden Wissenseinheiten miteinander verknüpft sind.
-Eine übliche Form der Verknüpfungsbeziehung ist eine Voraussetzung.
-So kann die Kenntnis einer Wissenseinheit eine Voraussetzung dafür sein,
-dass eine andere Wissenseinheit erst gelernt werden kann.
+Die Idee von semantischen Netzen geht zurück auf die Forschungen von Ross Quillian aus dem Jahre 1967,
+in denen er semantische Netze als Darstellung von menschlichem Wissen diskutierte.
 
-%% TODO: Hier ein Bsp. für ein semantisches Netz (bsp inhalte: addition, subtraktion, multiplikation, division, potentieren...)
+Ein semantisches Netz kann man sich als Graphen vorstellen. Die Knoten des Graphen repräsentieren
+hierbei einzelne atomare Wissenseinheiten. Kanten, mit denen zwei Knoten verbunden werden können,
+zeigen, dass diese beiden Wissenseinheiten miteinander verknüpft sind. Sie stellen also die Relationen zwischen
+den einzelnen Wissenseinheiten dar.\cite[S.5]{reichenberger2010}
+
+Eine mögliche Form einer Relation, die auch häufig in semantischen Netzen für ein ITS verwendet wird,
+ist eine Voraussetzung. Solch eine Relation würde ausdrücken, dass eine Wissenseinheit zwingend notwendig ist,
+um eine andere Wissenseinheit zu verstehen. In diesem Fall würde es sich bei dem semantischen Netz um einen gerichteten Graphen handeln.
+
+\begin{figure}[!ht]
+	\centering
+
+	\begin{tikzpicture}[->,>=stealth', node distance=2cm,
+                    semithick]
+			\tikzstyle{comp2} = [fill=yellow, draw, rectangle, rounded corners, minimum height=0.8cm]
+
+			\node[comp2]	(A)                    	{TODO};
+			\node[comp2]  (B) [below of=A] 				{Bsp. für semantisches Netz};
+
+			\path (A) edge              (B)
+			;
+			\end{tikzpicture}
+	\caption{Theoretisches Beispiel für ein semantisches Netzwerk mit Abhhängigkeitsrelationen}
+	\label{fig:semantic_net}
+\end{figure}
+
+Abbildung~\ref{fig:semantic_net} zeigt vereinfacht und beispielhaft ein semantisches Netzwerk mit Abhängigkeitsrelationen
+für einen Teilbereich der Mathematik.
+Eine solche Darstellung des Wissens ermöglicht es dem ITS, herauszufinden welche Wissenseinheit
+geeignet für den aktuellen Wissensstand des Lernenden ist, und welche er noch nicht verarbeiten kann.
 
 \subsection{Das Lernermodell / Das Tutandenmodell}
 %% - enthält zu jedem Zeitpunkt aktuell bekannten Wissensstand.
