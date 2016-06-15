@@ -1,0 +1,78 @@
+
+
+\documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+
+\usepackage[utf8]{inputenc}         % Input encoding (allow direct use of special characters like "ä")
+%\usepackage[english]{babel}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[automark]{scrpage2} 	 % Schickerer Satzspiegel mit KOMA-Script
+\usepackage{setspace}           	 % Allow the modification of the space between lines
+\usepackage{caption}
+
+\captionsetup[figure]{labelformat=empty}
+
+\usepackage{pdfpages}
+% Um .eps Files einzubinden
+\usepackage{epstopdf}
+
+
+
+\setbeamercovered{transparent}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+
+\usetheme{Madrid}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+
+\title[Seminar]{Seminar e-Learning und Wissenskommunikation}
+\subtitle[Remailer]{Adaptives Lernen}
+\author[M. McCreight]{Mervyn McCreight}
+\institute[FH-Wedel]{FH-Wedel}
+
+\subject{Adaptives Lernen}
+\keywords{Adaptives Lernen, Lernsoftware, Intelligente Tutorielle Systeme, Lernen, Lernparadigma}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+	\frametitle{Inhaltsverzeichnis}
+	\tableofcontents
+\end{frame}
+
+\section{Adaptives Lernen in der Lerntheorie}
+\subsection{Vergleich zum klassischen Lehrmodell}
+\subsection{Aptitude-Treatment Interaktion}
+\subsection{Adaptionsmaßnahmen}
+\subsection{Adaptionszwecke}
+
+
+\section{Intelligente Tutorielle Systeme}
+\subsection{Definition}
+\subsection{Unterschied zu klassischen Lehrsystemen}
+\subsection{Ablauf}
+\subsection{Struktur}
+\subsection{Möglichkeiten zur Umsetzung von Adaption}
+
+
+\section{Beispiel}
+\subsection{LISP-Tutor}
+\subsection{BRIDGE-Tutor}
+
+\section{Fazit}
+
+\end{document}
