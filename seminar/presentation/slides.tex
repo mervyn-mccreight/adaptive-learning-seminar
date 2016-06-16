@@ -10,6 +10,7 @@
 \usepackage[automark]{scrpage2} 	 % Schickerer Satzspiegel mit KOMA-Script
 \usepackage{setspace}           	 % Allow the modification of the space between lines
 \usepackage{caption}
+\usepackage{tikz}
 
 \captionsetup[figure]{labelformat=empty}
 
@@ -46,6 +47,11 @@
 \keywords{Adaptives Lernen, Lernsoftware, Intelligente Tutorielle Systeme, Lernen, Lernparadigma}
 
 \begin{document}
+
+  \usetikzlibrary{positioning}
+  \usetikzlibrary{shapes}
+  \usetikzlibrary{arrows,automata}
+
 
 \frame{\titlepage}
 
@@ -274,7 +280,101 @@
   \end{block}
 \end{frame}
 \subsection{Unterschied zu klassischen Lehrsystemen}
-\subsection{Ablauf}
+\begin{frame}
+  \frametitle{Klassisches Lernsystem - Ablauf}
+
+  \begin{figure}[!htb]
+  	\centering
+  	\begin{tikzpicture}[
+  				part/.style={rectangle, minimum width=2cm, minimum height=1cm, very thick, draw=black, font=\itshape}
+  				]
+  		\node (start) [part] {Programmstart};
+  		\node (presentation) [part, right=of start] {Lehrstoffpräsentation};
+  		\node (question) [part, right=of presentation] {Fragestellung};
+      \node (end) [part, below=of start] {Programmende};
+      \node (feedback) [part, below=of presentation, right=of end] {Feedback};
+  		\node (analyze) [part, below=of question, right=of feedback] {Analyse der Antwort};
+
+
+  		\draw [->] (start) -- (presentation);
+  		\draw [->] (presentation) -- (question);
+  		\draw [->] (question) -- (analyze);
+  		\draw [->] (analyze) -- (feedback);
+  		\draw [->] (feedback) -- (presentation);
+  		\draw [->] (feedback) -- (end);
+  	\end{tikzpicture}
+
+  	\caption{Prinzip eines klassischen tutoriellen Systems}
+  \end{figure}
+
+  \begin{itemize}
+    \item starr vorgegebener Lehrplan
+    \item Richtig vs. Falsch
+    \item Wiederholung
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Beispiel}
+
+    \begin{figure}[!htb]
+    	\centering
+        \includegraphics[width=0.7\textwidth]{../bilder/fahrschule_app.jpg} %70% der Textbreite
+    	\caption{Beispielbild der Pocket Fahrschule Handy-Applikation}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Lernablauf - Intelligentes Tutorielles System}
+
+  \begin{figure}[!htb]
+  	\centering
+
+  	\begin{tikzpicture}[->,>=stealth',
+                      semithick]
+  			\tikzstyle{comp2} = [fill=yellow, draw, rectangle, rounded corners, minimum height=0.8cm]
+  			\tikzstyle{comp3} = [fill=black, text=white, draw, rectangle, rounded corners, minimum height=0.8cm]
+  			\tikzstyle{comp1} = [draw, rectangle, rounded corners, minimum height=0.8cm]
+
+
+        \node[comp1] (I) {Curriculum};
+        \node[comp2] (A) [below=of I] {Erstelle Problem};
+        \node[comp2] (B) [right=of A] {Präsentiere Problem};
+        \node[comp2] (E) [right=of B] {Vergleiche Lösungen};
+        \node[comp3] (C) [above=of E] {Student};
+        \node[comp3] (D) [above left=of E] {Muster};
+        \node[comp2] (F) [below=of E] {Analysiere Wissen};
+        \node[comp2] (G) [left=of F] {Feedback};
+
+  			\path (I) edge              (A)
+  						(A) edge              (B)
+  						(B) edge              (E)
+  						(D) edge              (E)
+  						(C) edge              (E)
+  						(E) edge              (F)
+  						(F) edge              (G)
+  						(G) edge              (A);
+
+  			\end{tikzpicture}
+  \end{figure}
+
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+       \begin{itemize}
+         \item Feedback nach Wissensstand
+         \item Lernproblem angepasst
+       \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}  %%<--- here
+        \begin{itemize}
+          \item flexibler Ablauf
+          \item dauerhafte Re-Analyse
+        \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
 \subsection{Struktur}
 \subsection{Möglichkeiten zur Umsetzung von Adaption}
 
