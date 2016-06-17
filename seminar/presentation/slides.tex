@@ -376,6 +376,115 @@
 
 
 \subsection{Architektur}
+\begin{frame}
+  \frametitle{Architektur}
+    \begin{figure}[!htb]
+    	\centering
+        \includegraphics[width=0.7\textwidth]{../bilder/its_structure.jpg} %70% der Textbreite
+    	\caption{Struktur eines Intelligenten Tutoriellen Systems}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Das Wissensmodell - Aufgabe}
+  \begin{block}{Aufgabe}
+    \begin{itemize}
+      \item gesamtes Lehrwissen
+      \item kommuniziert Lehrwissen für Aufgabenerstellung
+      \item Musterlösungen für Bewertung
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Das Wissensmodell - Wissensarten}
+  \begin{block}{Deklaratives Wissen}
+    \begin{itemize}
+      \item Wissen-Was / Faktenwissen
+      \item auswendig lernen
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Prozedurales Wissen}
+    \begin{itemize}
+      \item Wissen-Wie / praktisches Wissen
+      \item Regeln / Schemata
+      \item Verständnis
+      \item Verbindung von Faktenwissen
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Heuristisches Wissen}
+    \begin{itemize}
+      \item Erfahrungswissen
+      \item typische Fehler
+      \item Handlungsempfehlungen / Tipps
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Das Wissensmodell - Repräsentation}
+  \begin{block}{Black-Box Modell}
+    \begin{itemize}
+      \item Lösungsweg verborgen
+      \item unnatürliche Lösungsverfahren
+      \item nur Lösung ist bekannt
+      \item komplizierte Sachverhalte
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Glass-Box Modell}
+    \begin{itemize}
+      \item Lösungsweg offen
+      \item menschliche Lösungsverfahren
+      \item Nachstellung menschlicher Intelligenz
+      \item einfache Sachverhalte
+      \item gezieltere Hilfestellung
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Das Wissensmodell - Semantisches Netz}
+  \begin{block}{Aufgaben}
+    \begin{itemize}
+      \item Sammlung von Wissenseinheiten
+      \item Darstellung von Zusammenhängen
+      \item Nützlich z.B. Voraussetzungsrelation
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Das Wissensmodell - Semantisches Netz 2}
+  \begin{figure}[!htb]
+  	\centering
+
+  	\begin{tikzpicture}[->,>=stealth', node distance=1.5cm and 1cm,
+                      semithick]
+  			\tikzstyle{comp2} = [fill=yellow, draw, rectangle, rounded corners, minimum height=0.8cm]
+
+  			\node[comp2]	(A)                    	{Addition};
+  			\node[comp2]  (B) [right=of A] 				{Subtraktion};
+  			\node[comp2]  (C) [above=of A] 				{schriftl. Addition};
+  			\node[comp2]  (D) [above of=B, right=of C] 	{schriftl. Subtraktion};
+  			\node[comp2]  (E) [above of=A, left=of C] 	{Multiplikation};
+  			\node[comp2]  (F) [above of=C] 	{Division};
+  			\node[comp2]  (G) [above of=E] 	{schriftl. Multiplikation};
+
+  			\path (A) edge              (B)
+  						(A) edge              (C)
+  						(A) edge              (E)
+  						(B) edge              (D)
+  						(C) edge              (D)
+  						(E) edge              (G)
+  						(E) edge              (F)
+  			;
+  			\end{tikzpicture}
+  \end{figure}
+\end{frame}
+
 \subsection{Möglichkeiten zur Umsetzung von Adaption}
 
 
