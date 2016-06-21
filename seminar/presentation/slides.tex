@@ -744,6 +744,51 @@
 
 \begin{frame}
   \frametitle{Beispiel - LISP-Tutor (2)}
+  \begin{alertblock}{Tutor}
+    Define the function fact. It takes a number argument n, and computes the
+    factorial of n, which is the result of multiplying n*(n-1)*(n-2) ... * 1.
+    By definition, 0! is 1.
+  \end{alertblock}
+
+  \begin{block}{User}
+    (defun fact(n)
+      (cond ((equal) < ACTION >)
+      <RECURSIVECASE>
+    ))
+  \end{block}
+
+  \begin{alertblock}{Tutor}
+    I assume that you are trying to test if the number argument is equal to
+    the number zero. There is a special function for testing equivalence to zero.
+    Try to use that function instead of equal.
+
+    What code can you write to test if the condition for terminating case is true?
+    Try writing a predicate!
+  \end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Beispiel - LISP-Tutor(3)}
+  \begin{alertblock}{Tutor}
+    Is the value of fact in the recursive cases calculated by:\\
+    PRESS:      IF YOU WANT TO:\\
+    1           Calling fact recursively with n.\\
+    2           Multiplying n by fact of n minus 1.\\
+    3           Getting 1 2 ... n and then multiplying the results.\\
+    4           Have the tutor choose.\\
+  \end{alertblock}
+
+  \begin{block}{User}
+    3
+  \end{block}
+
+  \begin{alertblock}{Tutor}
+    That is a reasonable way to think of doing factorials, but it is not a plan for a recursive function.
+    Since you seem to be having trouble with the recursive cases, let us work through some examples and
+    figure out the conditions and actions for each of these cases.
+    (...)
+  \end{alertblock}
 
 \end{frame}
 
