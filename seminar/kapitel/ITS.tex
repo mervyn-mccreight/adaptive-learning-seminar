@@ -143,44 +143,36 @@ wie zum Beispiel dem Kognitivismus zu berücksichtigen.
 Im Gegensatz zu einem klassischen System kann ein ITS individuelle Kritik an einen Lernenden
 formulieren.
 
+\newpage
+
 \begin{figure}[!htb]
 	\centering
 
-	\begin{tikzpicture}[->,>=stealth', node distance=2cm,
-                    semithick]
+	\begin{tikzpicture}[->,>=stealth',
+										semithick]
 			\tikzstyle{comp2} = [fill=yellow, draw, rectangle, rounded corners, minimum height=0.8cm]
 			\tikzstyle{comp3} = [fill=black, text=white, draw, rectangle, rounded corners, minimum height=0.8cm]
 			\tikzstyle{comp1} = [draw, rectangle, rounded corners, minimum height=0.8cm]
 
 
-			\node[comp2] (A)                    {Erstelle ein Problem};
-			\node[comp2] 				 (I) [above right of=A]       {Lehrinhalt / Curriculum};
-			\node[comp2]         (B) [below of=A] {Präsentiere das Problem};
-			\node[comp2]         (E) [below of=B] {Vergleiche die Lösungen};
-			\node[comp1]         (C) [below right of=E] {Lösung};
-			\node[comp3]         (H) [right of=C] {Student};
-			\node[comp1]         (D) [below left of=E] {Musterlösung};
-			\node[comp2]         (F) [below right of=D] {Aktualisiere Wissenskenntnis vom Studenten};
-			\node[comp2]         (G) [below of=F] {Gebe Feedback};
+			\node[comp1] (I) {Curriculum};
+			\node[comp2] (A) [below=of I] {Erstelle Problem};
+			\node[comp2] (B) [right=of A] {Präsentiere Problem};
+			\node[comp2] (E) [right=of B] {Vergleiche Lösungen};
+			\node[comp3] (C) [above=of E] {Student};
+			\node[comp3] (D) [above left=of E] {Muster};
+			\node[comp2] (F) [below=of E] {Analysiere Wissen};
+			\node[comp2] (G) [left=of F] {Feedback};
 
-			\path (I) edge              node[right] {basierend auf} (A)
+			\path (I) edge              (A)
 						(A) edge              (B)
 						(B) edge              (E)
-						(H) edge [bend right]  node[above] {gibt} (C)
 						(D) edge              (E)
 						(C) edge              (E)
 						(E) edge              (F)
 						(F) edge              (G)
-						(G) edge [bend angle=105, bend left]              (A)
-			%% 					edge              node {1,1,R} (C)
-			%% (B) edge [loop above] node {1,1,L} (B)
-			%% 		edge              node {0,1,L} (C)
-			%% (C) edge              node {0,1,L} (D)
-			%% 		edge [bend left]  node {1,0,R} (E)
-			%% (D) edge [loop below] node {1,1,R} (D)
-			%% 		edge              node {0,1,R} (A)
-			%% (E) edge [bend left]  node {1,0,R} (A);
-			;
+						(G) edge              (A);
+
 			\end{tikzpicture}
 	\caption{Lernablauf in einem Intelligenten Tutoriellen System}
 	\label{fig:its_flow}
@@ -207,43 +199,6 @@ Hauptkomponenten besteht, die getrennt voneinander implementiert werden.
     \includegraphics[width=0.7\textwidth]{bilder/its_structure.jpg} %70% der Textbreite
 	\caption{Struktur eines Intelligenten Tutoriellen Systems}
 \end{figure}
-
-%% TODO: das Schaubild mit tikz nachstellen wäre schöner.
-%%\begin{figure}
-%%\centering
-%%
-%%	\begin{tikzpicture}[node distance=2.2cm]
-%%
-%%		\tikzstyle{comp1} = [draw, ellipse, rounded corners, minimum height=1cm, minimum width=4cm, fill=gray!50]
-%%		\tikzstyle{comp2} = [draw, rectangle, rounded corners, minimum height=1cm, minimum width=4cm]
-%%		\tikzstyle{comp3} = [draw, ellipse, minimum height=1cm, minimum width=4cm, fill=gray!10, text centered]
-%%
-%%		\tikzstyle{arrow} = [thick,->,>=stealth]
-%%
-%%		%%% NODES %%%
-%%		\node (tutand)     [comp1]                 {Lernender};
-%%		\node (ui)     		 [comp2, below of=tutand, minimum width=10cm]                 {Benutzerschnittstelle};
-%%		\coordinate[below of=ui] (c);
-%%
-%%		\node (tutor)         [comp3, left of=c]      {Tutorenmodell};
-%%		\node (learn)        [comp3, right of=c]     {Lernermodell};
-%%		\node (knowledge)       [comp2, below of=c,minimum width=10cm]     {Wissensmodell};
-%%
-%%		%%% ARROWS %%%
-%%		\draw [arrow] (tutand) -- (ui);
-%%
-%%		\draw [arrow] (ui) -- (tutand);
-%%		\draw [arrow] ([yshift=-0.5cm, xshift=-2.8cm]ui.east) -- (learn);
-%%
-%%		\draw [arrow] (learn) -- (tutor) node [midway, fill=white, text width=3cm] {wahrgenommener Wissensstand,\linebreak Verhaltenssequenzen des Lernenden};
-%%
-%%		\draw [arrow] (tutor) -- (knowledge);
-%%
-%%		\draw [arrow] (knowledge) -- (tutor);
-%%		\draw [arrow] (knowledge) -- (learn);
-%%	\end{tikzpicture}
-%%	\caption{Struktur eines Intelligenten Tutoriellen Systems}
-%%\end{figure}
 
 Die Kanten des Graphen, unter hinzunahme ihrer Beschriftungen, beschreiben die Art der
 Kommunikation zwischen den einzelnen Komponenten.
@@ -374,6 +329,8 @@ den einzelnen Wissenseinheiten dar.\cite[S.5ff]{reichenberger2010}
 Eine mögliche Form einer Relation, die auch häufig in semantischen Netzen für ein ITS verwendet wird,
 ist eine Voraussetzung. Solch eine Relation würde ausdrücken, dass eine Wissenseinheit zwingend notwendig ist,
 um eine andere Wissenseinheit zu verstehen. In diesem Fall würde es sich bei dem semantischen Netz um einen gerichteten Graphen handeln.
+
+\newpage
 
 \begin{figure}[!htb]
 	\centering
