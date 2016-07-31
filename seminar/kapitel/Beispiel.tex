@@ -1,26 +1,10 @@
 \chapter{Der LISP-Tutor GREATERP}
 
 \section{Hintergrund}
-%% -- einleitung
-%% - wurde an der Carnegie-Mellon-University entwickelt
-%% - 1985 entwickelt
-%% - soll LISP lehren
-%% - idee entstand aus der not, dass viele studenten die lisp-vorlesungen nicht verstanden
-%%
-%% -- aufbau
-%% - benutzerschnittstelle besteht nur aus text und einem textfeld für kommunikation
-%% - der generelle ablauf ist:
-%% -- system stellt dem benutzer eine aufgabe
-%% -- bewertet seine lösung
-%% -- gibt für jede eingabe sofort (!) feedback
-%% -- stellt daraufhin eine neue aufgabe
-%% -- oder gibt hilfestellung
-%% -- und so weiter
-
 Ein Beispiel für ein Intelligentes Tutorielles System ist der LISP-Tutor GREATERP\footnote{Goal-Restricted Environment for Tutoring and Educational Research on Programming}.
 Dieses Lehrsystem wurde in den 80er Jahren an der Carnegie-Mellon-Universität entwickelt.
 Ziel des Lernsystem ist es, einem Lernenden die Prinzipien von LISP zu lehren. Dabei soll das
-Gefühl eines auf den Lernenden zugeschnittenen Einzelunterrichts entstehen.
+Gefühl eines auf den Lernenden zugeschnittenen Einzelunterrichts entstehen.\cite[S. 159]{anderson1985}
 
 Das Programm verfügt über eine sehr einfach gehaltene Benutzerschnittstelle.
 Die einzige Kommunikationsform zwischen Tutor und Schüler ist Text.
@@ -36,7 +20,7 @@ Das System stellt dem Schüler eine Aufgabe. Der Schüler gibt eine Lösung ab, 
 Die abgegebene Lösung wird von dem System analysiert, sodass sich im Lernermodul ein Modell aktuellen Wissenstands des Schülers bildet.
 Das System bewertet im Zusammenspiel des Wissensmodells und des Lernermodells die Lösung und den aktuellen Wissensstand.
 Auf Basis dieser Analyse entscheidet das Tutorenmodell, welche Art von Aufgabenstellung sich für den Schüler in der Folge am Besten eignet.
-Feedback wird sofort gegeben.
+Feedback wird sofort gegeben.\cite[S. 160f]{anderson1985}
 
 \section{Der Beispieldialog - Das Lösen der Fakultät-Aufgabe}
 Um die Arbeitsweise des intelligenten LISP-Tutors näher zu erläutern,
@@ -79,7 +63,7 @@ herauszuarbeiten.
   What code can you write to test if the condition for terminating case is true?
   Try writing a predicate!
 \end{lstlisting}
-\caption{Beispieldialog LISP-Tutor Teil 1}
+\caption[Beispieldialog LISP-Tutor Teil 1]{Beispieldialog LISP-Tutor Teil 1 \\ Quelle: \cite[S. 173]{anderson1985}}
 \end{figure}
 
 Anhand des ersten Teils fällt sofort auf, dass das Lernsystem in Schriftform, aber
@@ -93,6 +77,8 @@ im Wissensmodell. Der Fehler, für den Vergleich mit der Zahl null, die Funktion
 equal statt zerop zu verwenden, ist ein häufig vorkommender Fehler. Dieser wurde mit Hilfe
 des heuristischen Wissens erkannt und durch das Tutorensystem mit einem entsprechenden Tipp
 kommentiert.
+\newpage
+
 
 %%
 %% --- listing abschnitt 3
@@ -126,7 +112,7 @@ kommentiert.
   figure out the conditions and actions for each of these cases.
   (...)
 \end{lstlisting}
-\caption{Beispieldialog LISP-Tutor Teil 2}
+\caption[Beispieldialog LISP-Tutor Teil 2]{Beispieldialog LISP-Tutor Teil 2 \\ Quelle: \cite[S. 173]{anderson1985}}
 \end{figure}
 
 Hier sieht man ein Beispiel einer theoretischen Frage, die nicht direkt mit Code beantwortet wird.
@@ -139,9 +125,3 @@ Da die Frage in diesem Beispiel falsch beantwortet wird, werden nun erst die all
 zum Thema Rekursion geschlossen, bevor mit der eigentlichen Übungsaufgabe fortgefahren wird.
 Hätte der Lernende die Frage richtig beantwortet, wäre der Kurs an dieser Stelle direkt
 mit der Weiterführung der Programmierung fortgefahren. Auch hier zeigt sich wieder das Zusammenspiel des Lerner- und des Tutorenmodells.
-
-
-
-
-
-%% -- und so weiter .. bisschen fleißaufgabe hier
