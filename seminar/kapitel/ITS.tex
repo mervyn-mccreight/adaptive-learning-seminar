@@ -375,11 +375,11 @@ geeignet für den aktuellen Wissensstand des Lernenden ist, und welche er noch n
 %% --- Was hat er bisher gemacht? (Historie)
 Das Lernermodell stellt zu jedem Zeitpunkt den aktuell bekannten Wissensstand des Lernenden dar.
 Jede Aktion des Lerners führt zu einer neuen Bewertung seines Wissens. Das Lernermodell ist daher stark dynamisch.
-Das ist notwendig damit das Intelligente Tutorielle System zu jeder Zeit dazu in der Lage ist, sich voraussichtlich optimal
+Das ist notwendig, damit das Intelligente Tutorielle System zu jeder Zeit dazu in der Lage ist, sich voraussichtlich optimal
 auf den Lernenden einzustellen.
-Passens zum Wissensmodell ist auch das Wissen des Lerners im Lernermodell in zwei Kategorien aufgeteilt.
-Es handelt sich hierbei um deklaratives und prozedurales Wissen. Bei beidem handelt es sich um Wissen, dass
-in der Form auch im Wissensmodell bekannt ist.
+Passend zum Wissensmodell ist auch das Wissen des Lerners im Lernermodell in zwei Kategorien aufgeteilt.
+Es handelt sich um deklaratives und prozedurales Wissen. Beides sind Arten von Wissen, die
+in der Form auch im Wissensmodell bekannt sind.
 
 %% - enthält außerdem Informationen darüber, was für ein Lerntyp
 %% - Lernender wahrscheinlich ist (individuelle Aussage über Lernenden)
@@ -397,10 +397,10 @@ Solches Wissen lässt sich ebenfalls über eine zusätzliche Befragung des Lerne
 %% --- Streng genommen wird notiert, ob Lernender Wissenselement beherrscht oder nicht
 %% --- in der Praxis zu streng, es wird bewertet "wie gut" der Lernende etwas kann.
 %% --- Fehler werden als unvollständiges Wissen betrachtet
-Eine typische Form ein Lernermodell darzustellen ist das Overlay-Modell.
+Eine typische Form ein Lernermodell darzustellen, ist das Overlay-Modell.
 Bei dem Overlay-Modell wird das Wissen des Lernenden stets als Teilmenge des Systemwissens betrachtet.
 Jedes bekannte Wissenselement der Lerndomäne wird mit dem aktuellen Wissensstand des Lerners verglichen.
-Streng genommen wird hierbei lediglich notiert, ob der Lernende dieses Wissenselement optimal beherrscht, oder gar nicht.
+Streng genommen wird lediglich notiert, ob der Lernende dieses Wissenselement optimal beherrscht, oder gar nicht.
 Diese strenge Trennung ist in der Praxis jedoch zu stark, weswegen typischerweise eine Bewertung jeder Wissenseinheit vorgenommen wird.
 So wird bewertet, zu welchem Grad der Lernende das entsprechende Wissensteil beherrscht.
 Im Overlay-Modell werden Fehler stets als unvollständiges Wissen betrachtet.
@@ -425,9 +425,9 @@ Eine Fehlerbibliothek besteht aus typischen Fehlern und Missverständnissen von 
 Mit Hilfe der Fehlerbibliothek ist es dem Tutorenmodell später möglich, eine bestimmte Art von
 Fehlern zu erkennen, und durch entsprechende Hinweise zu korrigieren.
 Ein Beispiel hierfür wäre ein vergessener Übertrag beim schriftlichen Addieren.
-Es handelt sich um einen typischen Fehler, der jedoch nicht bedeutet, dass der Lernende nicht dazu in der Lage ist
+Es handelt sich um einen typischen Fehler, der jedoch nicht bedeutet, dass der Lernende nicht dazu in der Lage ist,
 zu addieren. Er vergisst lediglich einen Schritt.
-Eine Fehlerbibliothek ist häufig sehr groß. Es ist auch unmöglich zum Zeitpunkt des Anlegens der Fehlerbibliothek
+Eine Fehlerbibliothek ist häufig sehr groß. Es ist auch unmöglich, zum Zeitpunkt des Anlegens der Fehlerbibliothek
 alle möglichen Fehler zu berücksichtigen oder vorherzusagen. Daher ist eine Fehlerbibliothek stets unvollständig.
 \cite[S.21ff]{gonschorek1998wissensbasierte}
 
@@ -449,18 +449,18 @@ An das Tutorenmodell werden folgende Anforderungen gestellt:
 %% -- rückmeldungen motivierend gestalten (fachlich korrekt, aber positiv)
 \begin{description}
 	\item[Angemessene Aufbereitung der Lehrinhalte]
-  Das Tutorenmodell muss dazu in der Lage sein die Lehrinhalte
+  Das Tutorenmodell muss dazu in der Lage sein, die Lehrinhalte
 	auf den Lerner spezialisiert zu adaptieren.
 
 	\item[Angemessene Auswahl der Lehrstrategie]
-  Die Didaktikkomponente muss dazu in der Lage sein für jeden Lernenden die passende Lehrstrategie zu wählen.
+  Die Didaktikkomponente muss dazu in der Lage sein, für jeden Lernenden die passende Lehrstrategie zu wählen.
 
 	\item[Steuerung des Lehrtempos]
   Das Lerntempo, mit dem verschiedene Lehrinhalte präsentiert werden, muss auf den Lernstil des Lerners zugeschnitten sein.
 	Dies bezieht sich im Wesentlichen auf die Einteilung in größere und kleinere Lernschritte.
 
 	\item[Wahl des aktuellen Lehrziels]
-	Das Tutorenmodell muss zu jeder Zeit dazu in der Lage sein das für den Lernenden optimale jeweils nächste Lehrziel zu wählen.
+	Das Tutorenmodell muss zu jeder Zeit dazu in der Lage sein, das für den Lernenden optimale, jeweils nächste Lehrziel zu wählen.
 \end{description}
 
 %% - trifft entscheidungen anhand des aktuellen lernstandes (zusammenspiel tutoren und tutanden modell)
@@ -470,7 +470,7 @@ An das Tutorenmodell werden folgende Anforderungen gestellt:
 %% - adaption wird hier entschieden.
 Um diese Anforderungen zu erfüllen, muss das Tutorenmodell mit dem Lernermodell zusammenarbeiten.
 Das Tutorenmodell trifft seine Entscheidungen auf Basis des aktuellen Wissensstands des Lernenden.
-Dieser Wissensstand erhält das Tutorenmodell über das Lernermodell.
+Diesen Wissensstand erhält das Tutorenmodell über das Lernermodell.
 Basierend auf dem aktuellen Wissen, und durch die Analyse der bisher durchgeführten Aktionen über die Historie,
 ist das Tutorenmodell dazu in der Lage, auszuwählen, welcher Lehrinhalt optimalerweise auf welche Art und Weise präsentiert werden soll.
 Das bedeutet, dass die Adaption des Systems innerhalb dieser Komponente entschieden wird.
@@ -491,25 +491,25 @@ Wie der Wissensstand des Lernenden an dieser Stelle analysiert wird, ist abhäng
 Wird deklaratives Wissen bewertet, kann lediglich unterschieden werden, ob dieses richtig oder falsch angegeben wurde.
 Eine Korrektur dieses Wissens geschieht üblicherweise durch eine erneute Präsentation des korrekten Wissens.
 Prozedurales Wissen ist schwieriger zu analysieren. Hierfür muss entschieden werden, ob Regeln korrekt und/oder in einer zielführenden
-Art und Weise angewendet wurden. Dabei führen oftmals mehrere verschiedene Lösungswege zu der selben korrekten Lösung.
-Eine Methode, zu bewerten ob dieses Wissen korrekt angewandt wurde, ist das Model-Tracing.
+Art und Weise angewendet wurden. Dabei führen oftmals mehrere verschiedene Lösungswege zu derselben korrekten Lösung.
+Eine Methode um zu bewerten ob dieses Wissen korrekt angewandt wurde, ist das Model-Tracing.
 
 Das Model-Tracing Verfahren versucht das Problemlösungsverhalten eines Lernenden nachzuvollziehen.
 Das korrekte prozedurale Wissen ist an dieser Stelle über das Wissensmodell bekannt.
-Nun wird versucht, Schritt für Schritt zu versuchen mit Hilfe der bekannten und korrekten Regeln, den Lösungsweg des Lernenden nachzuvollziehen.
-Hierfür wird Schritt für Schritt ein Lösungswegbaum mit zielführenden Lösungswegen aufgebaut.
+Nun wird versucht, Schritt für Schritt mit Hilfe der bekannten und korrekten Regeln, den Lösungsweg des Lernenden nachzuvollziehen.
+Hierfür wird ein Lösungswegbaum mit zielführenden Lösungswegen aufgebaut.
 Verlässt der Schüler mit einem seiner Zwischenschritte diesen Baum, ist davon auszugehen, dass der Lernende
 an dieser Stelle eine falsche Entscheidung getroffen hat. Nun kann das System den Lernenden darauf hinweisen.
-Problematisch ist hierbei, dass es für das System nicht möglich ist zu wissen, ob der Lernende seine Schritte
-bewusst, oder durch raten angewendet hat. Daher kann es auch zu Fehleinschätzungen seines Wissenstandes kommen.
+Problematisch ist, dass es für das System nicht möglich ist zu wissen, ob der Lernende seine Schritte
+bewusst, oder durch Raten gewählt hat. Daher kann es auch zu Fehleinschätzungen seines Wissenstandes kommen.
 
 \subsection{Die Benutzerschnittstelle}
 %% - ist die kommunikationsschnittstelle mit dem benutzer
 %% - auf ihr wird dem lernenden wissen repräsentiert
 %% - lernender kommuniziert über sie mit dem system
 Die Benutzerschnittstelle ist die Verbindungskomponente zwischen dem Lernenden und dem Intelligenten Tutoriellen System.
-Sie dient dabei als Kommunikationsschnittstelle. Auf der Benutzerschnittstelle wird dem Lernenden das vom System bereitgestellte Wissen
-präsentiert. Der Lernende bedient über die Benutzerschnittstelle das System. Je nach Art des Systems kann es sich hierbei um die reine
+Sie dient als Kommunikationsschnittstelle. Auf der Benutzerschnittstelle wird dem Lernenden das vom System bereitgestellte Wissen
+präsentiert. Der Lernende bedient über die Benutzerschnittstelle das System. Je nach Art des Systems kann es sich um die reine
 Eingabe von Antworten, eine schriftliche Form einer Dialogsimulation, oder auch eine Navigation über ein Menüsystem handeln.
 
 %% - anforderungen an die benutzerschnittstelle:
@@ -517,11 +517,11 @@ Eingabe von Antworten, eine schriftliche Form einer Dialogsimulation, oder auch 
 %% -- robust
 Die Benutzerschnittstelle muss möglichst intuitiv vom Benutzer anwendbar sein. Der Lernende muss den Hauptteil
 seiner Konzentration auf die Erlernung der Lehrinhalte, statt auf die Bedienung des Lernsystems richten können. Das führt zu einem
-angenehmen Lerngefühl. Es ist daher ratsam die Schnittstelle leicht anwendbar zu gestalten.
+angenehmen Lerngefühl. Es ist daher ratsam, die Schnittstelle leicht anwendbar zu gestalten.
 
 %% - mögliche arten: kommandozeile, menüs, jede art von grapischer oberfläche.
 Ebenso soll die Benutzerschnittstelle möglichst individuelle Adaptivität und Flexibilität gewährleisten.
-Typische Formen einer Benutzerschnittstelle sind die Kommunikation über Text und Eingabe über die Kommandozeile oder auch ein
+Typische Formen einer Benutzerschnittstelle sind die Kommunikation über Text und die Eingabe über die Kommandozeile oder auch ein
 vollständiges graphisches Menüsystem.
 %% TODO: hier vlt. Bilder von einer Kommandozeilen-ITS (GREATERP) und einem grafischen Ding (BRIDGE)
 
@@ -536,7 +536,7 @@ Auch eine Kombination dieser Methoden ist denkbar.
 
 %% - mehr methoden als hier präsentiert, da möglichkeit der adaption sehr vielfältig
 %% - dienen nur als beispiele
-Im Folgenden sollen nun einige dieser Methoden beispielhaft vorgestellt werden.
+Im Folgenden sollen einige dieser Methoden beispielhaft vorgestellt werden.
 Die Möglichkeiten zur Adaption sind sehr vielfältig,
 daher handelt es sich hierbei um keine vollständige Auflistung.
 
@@ -552,7 +552,7 @@ So könnte das Lernsystem zum Beispiel die
 Reihenfolge der Aufgabenstellungen so anpassen, dass es dem Lernenden leichter fällt diese zu lösen. Es ist aber ebenfalls denkbar,
 dass es vollständige Aufgabenstellungen auslässt, sofern davon auszugehen ist, dass der Lernende diese bereits beherrscht.
 
-Diese Form der Anpassung ist in Reinform nur an den Stellen möglich, in denen der Lernende selbst nicht die Navigation vornimmt.
+Diese Form der Anpassung ist in Reinform nur an den Stellen möglich, an denen der Lernende selbst nicht die Navigation vornimmt.
 \cite[S.17]{lehmann2010lernstile}
 
 \subsection{Unterstützung beim Lösen von Problemen}
@@ -565,12 +565,12 @@ Damit ist in der Regel eine Modifikation des vorgesehenen Lehrplans gemeint. Abw
 werden, wenn große Wissenslücken in einem Bereich des Lehrthemas wahrgenommen wurden, Zusatzinformationen eingeschoben,
 um den Lernenden dabei zu unterstützen diese Wissenslücken zu füllen.
 
-Die Zusatzinformationen können hierbei auf verschiedene Art und Weise
-präsentiert werden. Es kann sich hierbei um rein angegebenes Wissen, oder auch um zusätztliche Fragen handeln, die den Lernenden
+Die Zusatzinformationen können auf verschiedene Art und Weise
+präsentiert werden. Es kann sich um rein angegebenes Wissen, oder auch um zusätztliche Fragen handeln, die den Lernenden
 auf aktive Weise seine Wissenslücken selbstständig schließen lassen. Die Art der Zusatzinformationen hängt wiederum von den
 bekannten individuellen Vorlieben des Benutzers ab.
 
-Diese Art der Adaption ist dann besonders nützlich, wenn Wissen, dass zum Verständnis des zu vermittelnden neuen Wissens essentiell ist,
+Diese Art der Adaption ist dann besonders nützlich, wenn Wissen, das zum Verständnis des zu vermittelnden neuen Wissens essentiell ist,
 beim Lernenden nicht vorhanden, oder noch zu schwach ausgeprägt ist. Auf diese Weise werden dem Lernenden die Grundlagen
 zuerst vermittelt; das Verständnis des neuen Problems wird erleichert.
 \cite[S.17]{lehmann2010lernstile}
@@ -586,8 +586,8 @@ Unter der adaptiven Präsentation versteht man die Änderung der Präsentationsa
 Diese Form der Adaption konzentriert sich besonders auf die individuellen Stärken und Schwächen des Lernenden.
 
 Es ist bekannt, dass verschiedene Menschen auf verschiedene Art und Weisen am effektivsten Lernen. Manche Lerner verarbeiten
-Informationen, die in reiner Textform übermittelt werden besonders effektiv, währenddessen andere eine bildliche Präsentation bevorzugen.
-Genau diese Unterscheidung von Lerntypen ist die Kernthematik der adaptiven Präsentation. Die Voraussetzung ist es, herauszufinden welches
+Informationen, die in reiner Textform übermittelt werden besonders effektiv, während andere eine bildliche Präsentation bevorzugen.
+Genau diese Unterscheidung von Lerntypen ist die Kernthematik der adaptiven Präsentation. Die Voraussetzung ist es, herauszufinden, welches
 Kommunikationsmedium am besten geeignet ist, um den Lernenden Informationen über das Wissen zu vermitteln.
 Ist dieses Wissen bekannt, kann ein intelligentes tutorielles System die Lehrinhalte auf optimale Art und Weise für den Lernenden bereitstellen.
 \cite[S.17]{lehmann2010lernstile}
@@ -602,11 +602,11 @@ Die adaptive Navigation beschäftigt sich mit den Möglichkeiten, die dem Benutz
 durch das Lernsystem zu bewegen. Diese Art der Adaption ist besonders gut in menügesteuerten Lernsystemen anwendbar.
 
 Bei der adaptiven Navigation werden Lehrinhalte, die beispielsweise auf Grund der Bewertung des aktuellen Wissenstandes des Lernenden
-als ungeeignet eingestuft werden, vor dem Benutzer versteckt. Die Modifikation bezieht sich hier also auf die Auswählbarkeit der Navigation.
+als ungeeignet eingestuft werden, vor dem Benutzer versteckt. Die Modifikation bezieht sich also auf die Auswählbarkeit der Navigation.
 
 Auf diese Art und Weise soll verhindert werden, dass der Lernende auf Grund einer sehr großen Menge an
 Lernmöglichkeiten und Lernzielen den Überblick verliert, und so einen sehr langen Weg zur Erlernung des Lernzieles wählt,
-oder gar einen Lernpfad wählt, der überhaupt nicht Zielführend ist.
+oder gar einen Lernpfad wählt, der überhaupt nicht zielführend ist.
 
 Mit Hilfe der adaptiven Navigation wird der Benutzer zu einem Weg des Lernens begleitet, der möglichst optimal
 zur Erreichung des Lernzieles führt. Informationen, die der Lernende noch gar nicht verarbeiten kann, oder zu denen dem Lernenden schlicht
@@ -614,7 +614,7 @@ das nötige Vorwissen fehlt, werden
 ausgeblendet. So führen alle sichtbaren Navigationen lediglich zu Inhalten, die der Lernende theoretisch
 bearbeiten oder lernen kann.
 
-Eine andere Form der Anpassung ist hier die Veränderung der Reihenfolge der Navigationsinhalte.
-Folgeschritte, die als besonders geeignet angesehen werden, werden an einer attraktiveren Stelle platziert, als
-schlechter geeignete Fortsetzungen. Auf diese Art und Weise wird der Lerner auf einem optimalen Lernweg gehalten.
+Eine andere Form der Anpassung ist die Veränderung der Reihenfolge der Navigationsinhalte.
+Folgeschritte, die als besonders geeignet angesehen werden, werden an einer attraktiveren Stelle platziert als
+schlechter geeignete Fortsetzungen. Auf diese Weise wird der Lerner auf einem optimalen Lernweg gehalten.
 \cite[S.17]{lehmann2010lernstile}
